@@ -7,6 +7,7 @@ public class BulletShooting : MonoBehaviour
     [SerializeField] Transform shootPoint;
     [SerializeField] GameObject bullet;
     [SerializeField] float bulletSpeed = 10f;
+    [SerializeField] float speedGathering = 2f;
 
     private float bulletSpeedMax = 30f;
 
@@ -22,11 +23,11 @@ public class BulletShooting : MonoBehaviour
         {
             if(bulletSpeed < bulletSpeedMax)
             {
-                bulletSpeed += 2 * Time.deltaTime;
+                bulletSpeed += speedGathering * Time.deltaTime;
             }
         }
         //press space up to shoot
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             var bulletfire = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
             bulletfire.GetComponent<Rigidbody2D>().velocity = bulletSpeed * shootPoint.up;
