@@ -30,6 +30,7 @@ public class RotateShoot : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             isRotating = false;
+            currentRotateSpeed = initRotateSpeed;
         }
 
         
@@ -45,4 +46,5 @@ public class RotateShoot : MonoBehaviour
 
         
     }
+
 }
