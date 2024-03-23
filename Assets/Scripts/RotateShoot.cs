@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class RotateShoot : MonoBehaviour
 {
-    [SerializeField] float rotateSpeed;
+    [SerializeField] float initRotateSpeed;
+    [SerializeField] float currentRotateSpeed;
 
+    bool isRotating = false;
+
+    float stepTime;
+    float rotateAmount;
+    float pressStartTime; // thoi diem bat dau nhan nut
 
     private void Start()
     {
@@ -14,23 +20,27 @@ public class RotateShoot : MonoBehaviour
 
     private void LateUpdate()
     {
-        //use A or D to rotate hand t shoot
-        if (Input.GetKey(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
         {
-            float currentZRotation = transform.rotation.eulerAngles.z;
-
-            float newZRotation = currentZRotation + rotateSpeed * Time.deltaTime;
-
-            transform.rotation = Quaternion.Euler(0, 0, newZRotation);
+            isRotating = true;
+            pressStartTime = Time.time;
+            currentRotateSpeed = initRotateSpeed;
         }
-        if (Input.GetKey(KeyCode.D))
+
+        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
+            isRotating = false;
+        }
+
+        
+        if(isRotating )
+        {
+            stepTime = Time.time - pressStartTime;
+            currentRotateSpeed += stepTime;
+
+            rotateAmount = Input.GetKey(KeyCode.A) ? 1f : -1f;
+            transform.Rotate(Vector3.forward, rotateAmount * currentRotateSpeed * Time.deltaTime);
             
-            float currentZRotation = transform.rotation.eulerAngles.z;
-
-            float newZRotation = currentZRotation - rotateSpeed * Time.deltaTime;
-
-            transform.rotation = Quaternion.Euler(0, 0, newZRotation);
         }
 
         
