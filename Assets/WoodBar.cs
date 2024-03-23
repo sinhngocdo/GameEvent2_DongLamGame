@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class WoodBar : MonoBehaviour
 {
-    public Transform startPoint; 
-    public Transform endPoint;
-    public float moveSpeed = 0.1f;
+    [SerializeField] Transform startPoint; 
+    [SerializeField] Transform endPoint;
+    [SerializeField] float moveSpeed = 0.1f;
 
-    private bool isMoving = false;
+    [SerializeField] bool isMoving = false;
+    [SerializeField] bool isStartPoint = false;
 
     private void OnEnable()
     {
@@ -24,27 +25,45 @@ public class WoodBar : MonoBehaviour
     }
 
 
+    private void Start()
+    {
+        transform.position = startPoint.position;
+    }
+
 
     private void MoveWoodBar()
     {
-        if (!isMoving)
+        isMoving = true;
+        if (isMoving == false)
         {
-            StartCoroutine(MoveToTarget());
+            Debug.Log("isStartPoint: " + isStartPoint);
+            if (isStartPoint == true)
+            {
+                Debug.Log("isStartPoint: " + isStartPoint);
+                StartCoroutine(MoveToTarget(endPoint));
+                isStartPoint = false;
+            }
+            else
+            {
+                Debug.Log("isStartPoint: " + isStartPoint);
+                StartCoroutine(MoveToTarget(startPoint));
+                isStartPoint = true;
+            }
+            
         }
         
     }
 
-    IEnumerator MoveToTarget()
+    IEnumerator MoveToTarget(Transform targetPosition)
     {
-        isMoving = true;
+        var startPos = startPoint.position;
+        var targetPos = targetPosition.position;
 
-        while (transform.position != endPoint.position)
+        while (transform.position != targetPos)
         {
 
-            transform.position = Vector3.MoveTowards(startPoint.transform.position, endPoint.transform.position, moveSpeed);
-            yield return null; 
+            transform.position = Vector3.MoveTowards(startPos, targetPos, moveSpeed);
+            yield return null;
         }
-
-        isMoving = false; 
     }
 }

@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class BulletShooting : MonoBehaviour
 {
+    [Header("****Bullet display****")]
     [SerializeField] Transform shootPoint;
-    [SerializeField] GameObject bullet;
-    [SerializeField] float bulletSpeed = 10f;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] float bulletSpeed = 0f;
     [SerializeField] float speedGathering = 2f;
 
     private float bulletSpeedMax = 30f;
 
     [Header("****trajectory display****")]
     [SerializeField] LineRenderer lineRenderer;
-    [SerializeField] int linePoints = 175;
+    [SerializeField] int linePoints = 15;
     [SerializeField] float timeIntervalinPoints = 0.1f;
 
+    
 
     private void Update()
     {
@@ -25,24 +27,34 @@ public class BulletShooting : MonoBehaviour
             {
                 bulletSpeed += speedGathering * Time.deltaTime;
             }
+
+            if (lineRenderer != null)
+            {
+                DrawTrajectory();
+                lineRenderer.enabled = true;
+            }
+            else
+            {
+                lineRenderer.enabled = false;
+            }
         }
+        
         //press space up to shoot
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            var bulletfire = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
-            bulletfire.GetComponent<Rigidbody2D>().velocity = bulletSpeed * shootPoint.up;
+            BulletShootHandle();
         }
 
-        if(lineRenderer != null)
-        {
-            DrawTrajectory();
-            lineRenderer.enabled = true;
-        }
-        else
-        {
-            lineRenderer.enabled = false;
-        }
+        
 
+    }
+
+
+    void BulletShootHandle()
+    {
+        var bulletfire = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+        bulletfire.GetComponent<Rigidbody2D>().velocity = bulletSpeed * shootPoint.up;
+        ResetValue();
     }
 
     void DrawTrajectory()
@@ -63,4 +75,11 @@ public class BulletShooting : MonoBehaviour
             time+= timeIntervalinPoints;
         }
     }
+
+    void ResetValue()
+    {
+        bulletSpeed = 0f;
+        lineRenderer.enabled = false;
+    }
+
 }
