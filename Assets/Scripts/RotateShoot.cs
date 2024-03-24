@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class RotateShoot : MonoBehaviour
 {
+    [Header("Rotate Speed")]
     [SerializeField] float initRotateSpeed;
-    [SerializeField] float currentRotateSpeed;
+    [SerializeField][ReadOnlyInspector] float currentRotateSpeed;
+    [SerializeField] float maxRotateSpeed;
 
     bool isRotating = false;
 
-    float stepTime;
+    [Header("Hold Time")]
+    [SerializeField] [ReadOnlyInspector] float holdTime;
+    [SerializeField] float maxHoldTime;
+
     float rotateAmount;
     float pressStartTime; // thoi diem bat dau nhan nut
 
@@ -36,8 +42,8 @@ public class RotateShoot : MonoBehaviour
         
         if(isRotating )
         {
-            stepTime = Time.time - pressStartTime;
-            currentRotateSpeed += stepTime;
+            holdTime = (Time.time - pressStartTime) > maxHoldTime ? maxHoldTime : (Time.time - pressStartTime);
+            currentRotateSpeed = (currentRotateSpeed > maxRotateSpeed) ? maxRotateSpeed : (currentRotateSpeed + holdTime);
 
             rotateAmount = Input.GetKey(KeyCode.A) ? 1f : -1f;
             transform.Rotate(Vector3.forward, rotateAmount * currentRotateSpeed * Time.deltaTime);

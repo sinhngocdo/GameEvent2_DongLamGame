@@ -10,6 +10,11 @@ public class BulletShooting : MonoBehaviour
     [SerializeField] float bulletSpeed = 0f;
     [SerializeField] float speedGathering = 2f;
 
+    [Header("DelayShoot")]
+    [SerializeField] float fireRate = 0.2f;
+    [SerializeField] [ReadOnlyInspector] float fireElapsedTime = 0;
+
+
     private float bulletSpeedMax = 30f;
 
     [Header("****trajectory display****")]
@@ -17,11 +22,15 @@ public class BulletShooting : MonoBehaviour
     [SerializeField] int linePoints = 15;
     [SerializeField] float timeIntervalinPoints = 0.1f;
 
-    
+    private void Start()
+    {
+        fireElapsedTime = fireRate;
+    }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        fireElapsedTime += Time.deltaTime;
+        if (Input.GetKey(KeyCode.Space) && fireElapsedTime >= fireRate)
         {
             if(bulletSpeed < bulletSpeedMax)
             {
@@ -40,7 +49,7 @@ public class BulletShooting : MonoBehaviour
         }
         
         //press space up to shoot
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && fireElapsedTime >= fireRate)
         {
             BulletShootHandle();
         }
@@ -80,6 +89,7 @@ public class BulletShooting : MonoBehaviour
     {
         bulletSpeed = 0f;
         lineRenderer.enabled = false;
+        fireElapsedTime = 0;
     }
 
 }

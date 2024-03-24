@@ -541,6 +541,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initRotateSpeed: 10
   currentRotateSpeed: 0
+  maxRotateSpeed: 50
+  holdTime: 0
+  maxHoldTime: 10
 --- !u!1 &1968785528
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +748,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3288169068868593581, guid: 3dbdcb15eccd74e4796094d9a677a3cf, type: 3}
   bulletSpeed: 2
   speedGathering: 4
+  fireRate: 5
+  fireElapsedTime: 0
   lineRenderer: {fileID: 1968785531}
   linePoints: 25
   timeIntervalinPoints: 0.1
@@ -789,11 +794,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8252787656340600082, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.75
+      value: 6.11
       objectReference: {fileID: 0}
     - target: {fileID: 8252787656340600082, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59
+      value: -3.46
       objectReference: {fileID: 0}
     - target: {fileID: 8252787656340600082, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
       propertyPath: m_LocalPosition.z
