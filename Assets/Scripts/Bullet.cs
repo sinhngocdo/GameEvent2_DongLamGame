@@ -7,10 +7,9 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "obstacle")
+        if (collision.gameObject.tag == "Balloon" || collision.gameObject.tag == "Star")
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
         }
     }
 }
