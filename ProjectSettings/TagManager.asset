@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - obstacle
-  - bullet
+  - Star
+  - Balloon
+  - Bullet
   layers:
   - Default
   - TransparentFX
