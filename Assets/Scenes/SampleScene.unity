@@ -1053,7 +1053,9 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions: []
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1
@@ -1069,6 +1071,15 @@ LineRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.122389615
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1127,12 +1138,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 939898497}
   bulletPrefab: {fileID: 3288169068868593581, guid: 3dbdcb15eccd74e4796094d9a677a3cf, type: 3}
-  bulletSpeed: 2
+  bulletSpeed: 4
   speedGathering: 4
-  fireRate: 5
+  fireRate: 0
   fireElapsedTime: 0
   lineRenderer: {fileID: 1968785531}
-  linePoints: 25
+  linePoints: 2
   timeIntervalinPoints: 0.1
 --- !u!1 &2126053962
 GameObject:

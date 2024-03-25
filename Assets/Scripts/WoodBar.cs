@@ -53,7 +53,6 @@ public class WoodBar : MonoBehaviour
     {
         if (isMoving == IsMoving.isMovingToA)
         {
-            Debug.Log("isMoveToA");
             transform.position = Vector3.MoveTowards(transform.position, positionA.position, moveSpeed * Time.deltaTime);
             if(transform.position == positionA.position)
             {
@@ -62,7 +61,6 @@ public class WoodBar : MonoBehaviour
         }
         if (isMoving == IsMoving.isMovingToB)
         {
-            Debug.Log("isMoveToB");
             transform.position = Vector3.MoveTowards(transform.position, positionB.position, moveSpeed * Time.deltaTime);
             if(transform.position == positionB.position)
             {

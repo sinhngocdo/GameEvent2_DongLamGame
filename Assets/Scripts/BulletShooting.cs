@@ -87,7 +87,7 @@ public class BulletShooting : MonoBehaviour
 
     void ResetValue()
     {
-        bulletSpeed = 0f;
+        bulletSpeed = 2f;
         lineRenderer.enabled = false;
         fireElapsedTime = 0;
     }
