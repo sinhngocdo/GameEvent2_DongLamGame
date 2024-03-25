@@ -3,64 +3,85 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UIElements;
+
+public enum IsMoving
+{
+    isMovingToA,
+    isMovingToB,
+    isStayA,
+    isStayB
+}
 
 public class WoodBar : MonoBehaviour
 {
-    [SerializeField] Transform startPoint; 
-    [SerializeField] Transform endPoint;
-    [SerializeField] float moveSpeed = 0.1f;
+    [SerializeField] Transform positionA;
+    [SerializeField] Transform positionB;
+    [SerializeField] float moveSpeed = 10f;
 
-    [SerializeField] bool isMoving = false;
-    [SerializeField] bool isStartPoint = false;
+    IsMoving isMoving;
 
     private void OnEnable()
     {
-        SwitchHandle.onIsSwitched += MoveWoodBar;
+        SwitchHandle.onIsSwitched += MoveWoodBarIsTrue;
     }
 
     
 
     private void OnDisable()
     {
-        SwitchHandle.onIsSwitched -= MoveWoodBar;
+        SwitchHandle.onIsSwitched -= MoveWoodBarIsTrue;
     }
 
 
     private void Start()
     {
-        transform.position = startPoint.position;
+        transform.position = positionA.position;
+        isMoving = IsMoving.isStayA;
+    }
+
+    private void Update()
+    {
+        MoveWoodBar();
+        
     }
 
 
-    private async void MoveWoodBar()
+
+    #region MoveWoodBar
+    void MoveWoodBar()
     {
-        if (!isMoving)
+        if (isMoving == IsMoving.isMovingToA)
         {
-            isMoving = true;
-            if (isStartPoint)
-                await MoveToTarget(endPoint);
-            else
-                await MoveToTarget(startPoint);
-            isStartPoint = !isStartPoint;
-            isMoving = false;
+            Debug.Log("isMoveToA");
+            transform.position = Vector3.MoveTowards(transform.position, positionA.position, moveSpeed * Time.deltaTime);
+            if(transform.position == positionA.position)
+            {
+                isMoving = IsMoving.isStayA;
+            }
+        }
+        if (isMoving == IsMoving.isMovingToB)
+        {
+            Debug.Log("isMoveToB");
+            transform.position = Vector3.MoveTowards(transform.position, positionB.position, moveSpeed * Time.deltaTime);
+            if(transform.position == positionB.position)
+            {
+                isMoving = IsMoving.isStayB;
+            }
         }
     }
 
-    private async Task MoveToTarget(Transform targetPosition)
+    void MoveWoodBarIsTrue()
     {
-        var startPos = transform.position;
-        var targetPos = targetPosition.position;
-        float distance = Vector3.Distance(startPos, targetPos);
-        float duration = distance / moveSpeed;
-        float startTime = Time.time;
-
-        while (startPos != targetPos)
+        if(isMoving == IsMoving.isStayA)
         {
-            float fraction = (Time.time - startTime) / duration;
-            transform.position = Vector3.Lerp(startPos, targetPos, fraction);
-            await Task.Yield();
-            if (this == null) Debug.Log("object deleted"); return;
+            isMoving = IsMoving.isMovingToB;
         }
-        transform.position = targetPos;
+        if(isMoving == IsMoving.isStayB)
+        {
+            isMoving = IsMoving.isMovingToA;
+        }
     }
+
+    #endregion
 }

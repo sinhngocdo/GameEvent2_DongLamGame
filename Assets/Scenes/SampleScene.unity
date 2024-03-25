@@ -792,7 +792,7 @@ Transform:
   m_GameObject: {fileID: 1311510744}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.14, y: 3.89, z: 0}
+  m_LocalPosition: {x: -0.91, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1159,7 +1159,7 @@ Transform:
   m_GameObject: {fileID: 2126053962}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.44, y: 0.59, z: 0}
+  m_LocalPosition: {x: 6.33, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1223,8 +1223,16 @@ PrefabInstance:
       objectReference: {fileID: 2126053963}
     - target: {fileID: 9175007437951145530, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
       propertyPath: moveSpeed
-      value: 0.02
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9175007437951145530, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
+      propertyPath: positionA
+      value: 
+      objectReference: {fileID: 1311510745}
+    - target: {fileID: 9175007437951145530, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
+      propertyPath: positionB
+      value: 
+      objectReference: {fileID: 2126053963}
     - target: {fileID: 9175007437951145530, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
       propertyPath: startPoint
       value: 
@@ -1233,6 +1241,18 @@ PrefabInstance:
       propertyPath: isStartPoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9175007437951145530, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
+      propertyPath: positions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175007437951145530, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
+      propertyPath: positions.Array.data[0]
+      value: 
+      objectReference: {fileID: 1311510745}
+    - target: {fileID: 9175007437951145530, guid: 0ea5a7177c059164789a5867aaaf827c, type: 3}
+      propertyPath: positions.Array.data[1]
+      value: 
+      objectReference: {fileID: 2126053963}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
