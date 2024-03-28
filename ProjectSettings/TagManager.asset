@@ -7,6 +7,9 @@ TagManager:
   - Star
   - Balloon
   - Bullet
+  - Ground
+  - Wall
+  - DotCircle
   layers:
   - Default
   - TransparentFX
