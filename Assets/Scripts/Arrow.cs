@@ -31,5 +31,17 @@ public class Arrow : MonoBehaviour
         {
             this.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
+        
+
+        if (collision.gameObject.TryGetComponent<IHittableObject>(out var hit))
+        {
+            HitInfo hitInfo = new HitInfo()
+            {
+                hitPoint = collision.ClosestPoint(new Vector2(this.transform.position.x, this.transform.position.y)),
+                Damage = 5
+            };
+                
+            hit.OnHit(hitInfo);
+        }
     }
 }
