@@ -56,7 +56,7 @@ public class BulletShooting : MonoBehaviour
 
             if (bulletSpeed < bulletSpeedMax)
             {
-                arrowSpeed += speedGathering * Time.deltaTime;
+                bulletSpeed += speedGathering * Time.deltaTime;
             }
 
             if (lineRenderer != null)
@@ -72,10 +72,28 @@ public class BulletShooting : MonoBehaviour
 
 
         //press space up to shoot
-        if (Input.GetKeyUp(KeyCode.Space) && fireElapsedTime >= fireRate && arrowIntaracting == null)
+        if (Input.GetKeyUp(KeyCode.Space) && fireElapsedTime >= fireRate /*&& arrowIntaracting == null*/)
         {
             BulletShootHandle();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            nextTypeArrowFire = ArrowType.normal;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            nextTypeArrowFire = ArrowType.threeray;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            nextTypeArrowFire = ArrowType.bomb;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            nextTypeArrowFire = ArrowType.control;
+        }
+
     }
 
 
@@ -104,7 +122,7 @@ public class BulletShooting : MonoBehaviour
         arrowFire.arrowInteracting = arrowFire;
         if (arrowFire != null)
         {
-            arrowFire.GetComponent<Rigidbody2D>().velocity = bulletSpeed * shootPoint.up;
+            arrowFire.GetComponent<Rigidbody2D>().velocity = bulletSpeed * shootPoint.right;
             ResetValue();
         }
     }
@@ -112,7 +130,7 @@ public class BulletShooting : MonoBehaviour
     void DrawTrajectory()
     {
         Vector2 origin        = shootPoint.position;
-        Vector2 startVelocity = bulletSpeed * shootPoint.up;
+        Vector2 startVelocity = bulletSpeed * shootPoint.right;
         lineRenderer.positionCount = linePoints;
 
         float time = 0;

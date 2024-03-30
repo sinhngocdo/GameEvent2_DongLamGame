@@ -10,9 +10,12 @@ public class Arrow : MonoBehaviour
     public                     Rigidbody2D rigid;
     public                     Arrow       arrowInteracting;
 
+    bool isHit = false;
+
 
     protected virtual void Awake()
     {
+        isHit = false;
         if (rigid == null)
         {
             rigid = GetComponent<Rigidbody2D>();
@@ -26,7 +29,7 @@ public class Arrow : MonoBehaviour
         if (isHit == false)
         {
             // Calculate the angle from the direction
-            float angle = Mathf.Atan2(rb2d.velocity.y, rb2d.velocity.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(rigid.velocity.y, rigid.velocity.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
