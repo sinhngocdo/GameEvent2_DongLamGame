@@ -77,19 +77,19 @@ public class BulletShooting : MonoBehaviour
             BulletShootHandle();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             nextTypeArrowFire = ArrowType.normal;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             nextTypeArrowFire = ArrowType.threeray;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             nextTypeArrowFire = ArrowType.bomb;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             nextTypeArrowFire = ArrowType.control;
         }
