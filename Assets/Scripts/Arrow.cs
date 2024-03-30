@@ -1,22 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    [HideInInspector] public Rigidbody2D rb2d;
-    [HideInInspector] public Collider2D col2d;
+    [SerializeField] [ReadOnlyInspector] protected float z;
+    [SerializeField] [ReadOnlyInspector]           bool  lateStart;
 
-    bool isHit = false;
+    [SerializeField] protected int         Damage = 5;
+    public                     Rigidbody2D rigid;
+    public                     Arrow       arrowInteracting;
 
-    private void Start()
+
+    protected virtual void Awake()
     {
-        
-        rb2d = GetComponent<Rigidbody2D>();
-        col2d = GetComponent<Collider2D>();
+        if (rigid == null)
+        {
+            rigid = GetComponent<Rigidbody2D>();
+        }
     }
 
-    private void Update()
+    protected virtual void Start() { }
+
+    protected virtual void Update()
     {
         if (isHit == false)
         {
@@ -24,16 +29,33 @@ public class Arrow : MonoBehaviour
             float angle = Mathf.Atan2(rb2d.velocity.y, rb2d.velocity.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
-        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (collision.gameObject.tag == "DotCircle")
+        {
+            z -= 5;
+        }
 
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Ground")
         {
             isHit = true;
             this.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        }
+
+
+        if (collision.gameObject.TryGetComponent<IHittableObject>(out var hit))
+        {
+            HitInfo hitInfo = new HitInfo()
+            {
+                hitPoint = collision.ClosestPoint(new Vector2(this.transform.position.x, this.transform.position.y)),
+                Damage   = this.Damage,
+            };
+
+            hit.OnHit(hitInfo);
         }
     }
 }
