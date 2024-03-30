@@ -1,28 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    [SerializeField][ReadOnlyInspector] float z;
-    [SerializeField][ReadOnlyInspector] bool lateStart;
+    [SerializeField] [ReadOnlyInspector] protected float z;
+    [SerializeField] [ReadOnlyInspector]           bool  lateStart;
 
-    private void Update()
+    [SerializeField] protected int         Damage = 5;
+    public                     Rigidbody2D rigid;
+    public                     Arrow       arrowInteracting;
+
+
+    protected virtual void Awake()
     {
-        if(lateStart == false)
+        if (rigid == null)
         {
-            z = transform.localEulerAngles.z;
+            rigid = GetComponent<Rigidbody2D>();
+        }
+    }
+
+    protected virtual void Start() { }
+
+    protected virtual void Update()
+    {
+        if (lateStart == false)
+        {
+            z         = transform.localEulerAngles.z;
             lateStart = true;
         }
 
         transform.rotation = Quaternion.Euler(0, 0, z);
-
-
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "DotCircle")
+        if (collision.gameObject.tag == "DotCircle")
         {
             z -= 5;
         }
@@ -31,16 +44,16 @@ public class Arrow : MonoBehaviour
         {
             this.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
-        
+
 
         if (collision.gameObject.TryGetComponent<IHittableObject>(out var hit))
         {
             HitInfo hitInfo = new HitInfo()
             {
                 hitPoint = collision.ClosestPoint(new Vector2(this.transform.position.x, this.transform.position.y)),
-                Damage = 5
+                Damage   = this.Damage,
             };
-                
+
             hit.OnHit(hitInfo);
         }
     }
