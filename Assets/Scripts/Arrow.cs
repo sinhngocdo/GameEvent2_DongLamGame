@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    [SerializeField][ReadOnlyInspector] float z;
-    [SerializeField][ReadOnlyInspector] bool lateStart;
+    [HideInInspector] public Rigidbody2D rb2d;
+    [HideInInspector] public Collider2D col2d;
+
+    bool isHit = false;
+
+    private void Start()
+    {
+        
+        rb2d = GetComponent<Rigidbody2D>();
+        col2d = GetComponent<Collider2D>();
+    }
 
     private void Update()
     {
-        if(lateStart == false)
+        if (isHit == false)
         {
-            z = transform.localEulerAngles.z;
-            lateStart = true;
+            // Calculate the angle from the direction
+            float angle = Mathf.Atan2(rb2d.velocity.y, rb2d.velocity.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
-
-        transform.rotation = Quaternion.Euler(0, 0, z);
-
-
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "DotCircle")
-        {
-            z -= 5;
-        }
 
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Ground")
         {
+            isHit = true;
             this.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
     }

@@ -6,8 +6,8 @@ public class BulletShooting : MonoBehaviour
 {
     [Header("****Bullet display****")]
     [SerializeField] Transform shootPoint;
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] float bulletSpeed = 0f;
+    [SerializeField] GameObject arrowPrefab;
+    [SerializeField] float arrowSpeed = 0f;
     [SerializeField] float speedGathering = 2f;
 
     [Header("DelayShoot")]
@@ -32,9 +32,9 @@ public class BulletShooting : MonoBehaviour
         fireElapsedTime += Time.deltaTime;
         if (Input.GetKey(KeyCode.Space) && fireElapsedTime >= fireRate)
         {
-            if(bulletSpeed < bulletSpeedMax)
+            if(arrowSpeed < bulletSpeedMax)
             {
-                bulletSpeed += speedGathering * Time.deltaTime;
+                arrowSpeed += speedGathering * Time.deltaTime;
             }
 
             if (lineRenderer != null)
@@ -61,15 +61,15 @@ public class BulletShooting : MonoBehaviour
 
     void BulletShootHandle()
     {
-        var bulletfire = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
-        bulletfire.GetComponent<Rigidbody2D>().velocity = bulletSpeed * shootPoint.up;
+        var bulletfire = Instantiate(arrowPrefab, shootPoint.position, shootPoint.rotation);
+        bulletfire.GetComponent<Rigidbody2D>().velocity = shootPoint.transform.right * arrowSpeed;
         ResetValue();
     }
 
     void DrawTrajectory()
     {
         Vector2 origin = shootPoint.position;
-        Vector2 startVelocity = bulletSpeed * shootPoint.up;
+        Vector2 startVelocity = arrowSpeed * shootPoint.right;
         lineRenderer.positionCount = linePoints;
 
         float time = 0;
@@ -87,7 +87,7 @@ public class BulletShooting : MonoBehaviour
 
     void ResetValue()
     {
-        bulletSpeed = 2f;
+        arrowSpeed = 2f;
         lineRenderer.enabled = false;
         fireElapsedTime = 0;
     }

@@ -9,20 +9,11 @@ public class Bow : MonoBehaviour
 
     [SerializeField] float force;
 
-    [SerializeField] GameObject pointPrefab;
-    GameObject[] points;
-
-    [SerializeField] int numberPoints;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        points = new GameObject[numberPoints];
-        for (int i = 0; i < numberPoints; i++)
-        {
-            points[i] = Instantiate(pointPrefab, transform.position, Quaternion.identity);
-        }
+
     }
 
     // Update is called once per frame
@@ -34,18 +25,8 @@ public class Bow : MonoBehaviour
         direction = mousePos - bowPos;
 
         faceMouse();
-
-        for (int i = 0; i < numberPoints; i++)
-        {
-            points[i].transform.position = PointPosition(i * 0.1f);
-        }
     }
 
-    private Vector3 PointPosition(float v)
-    {
-        Vector2 currentPointPos = (Vector2)transform.position + (direction.normalized * force * v) + 0.5f * Physics2D.gravity * (v * v);
-        return currentPointPos;
-    }
 
     private void faceMouse()
     {
