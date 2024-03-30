@@ -6,7 +6,7 @@ public class HittableObject : MonoBehaviour, IHittableObject
     [SerializeField] private GameObject effectRef;
     [SerializeField] private AudioClip audio;
     
-    public void OnHit(HitInfo hit)
+    public virtual void OnHit(HitInfo hit)
     {
         GameObject instance = Instantiate(effectRef);
         instance.transform.position = (new Vector3(hit.hitPoint.x, hit.hitPoint.y, transform.position.z));
@@ -15,11 +15,11 @@ public class HittableObject : MonoBehaviour, IHittableObject
         StartCoroutine(HideObject(instance));
     }
 
-    IEnumerator HideObject(GameObject source)
+    protected IEnumerator HideObject(GameObject source)
     {
         yield return new WaitForSeconds(5);
         
-        source.SetActive(true);
+        source.SetActive(false);
     }
 }
 
