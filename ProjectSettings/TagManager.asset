@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Star
+  - Balloon
+  - Bullet
+  - Ground
+  - Wall
+  - DotCircle
   layers:
   - Default
   - TransparentFX
@@ -12,7 +18,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Interactive
   - 
   - 
   - 
