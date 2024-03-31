@@ -1693,6 +1693,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2816259002912853582, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: arrow3ray
+      value: 
+      objectReference: {fileID: 2859725146208976402, guid: 2b98c2152b98a204eb3f37b1465207ac, type: 3}
+    - target: {fileID: 2816259002912853582, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: arrowBomb
+      value: 
+      objectReference: {fileID: 5502191133589934156, guid: b4e78562fb56a2b4b9516edd75de02b7, type: 3}
+    - target: {fileID: 2816259002912853582, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: arrowNormal
+      value: 
+      objectReference: {fileID: -8673110137715976717, guid: 3dbdcb15eccd74e4796094d9a677a3cf, type: 3}
+    - target: {fileID: 2816259002912853582, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: arrowControl
+      value: 
+      objectReference: {fileID: 9178124343561101604, guid: 14df391936719024f82af3665762a845, type: 3}
     - target: {fileID: 9218738136908113880, guid: 57a8d07617db46849999f2496b45da89, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.79

@@ -109,6 +109,7 @@ namespace hungtrinh
             {
                 this.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 isAllowScale                                        = false;
+                Destroy(gameObject);
             }
 
 

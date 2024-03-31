@@ -46,7 +46,9 @@ public class Arrow : MonoBehaviour
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Ground")
         {
             isHit = true;
+            
             this.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            Destroy(gameObject);
         }
 
 
