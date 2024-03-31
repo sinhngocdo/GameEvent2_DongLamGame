@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7669978027255641568}
   - component: {fileID: 551542414292412961}
   - component: {fileID: -3320280793083930153}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WoodenCrossBar
   m_TagString: Wall
   m_Icon: {fileID: 0}

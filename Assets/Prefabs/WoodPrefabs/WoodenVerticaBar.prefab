@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7806516085204412549}
   - component: {fileID: 7089956255934004606}
   - component: {fileID: 6030867555766109259}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WoodenVerticaBar
   m_TagString: Wall
   m_Icon: {fileID: 0}

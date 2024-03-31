@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9175007437951145530}
   - component: {fileID: 1251394437297058297}
   - component: {fileID: 3194593674006930165}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WoodenBar
   m_TagString: Wall
   m_Icon: {fileID: 0}
