@@ -19,7 +19,7 @@ namespace hungtrinh
         {
             base.Update();
 
-            if (Input.GetKeyDown(KeyCode.Space) && !isSeparation)
+            if (Input.GetMouseButtonDown(0) && !isSeparation)
             {
                 arrowInteracting = null;
                 Separation();

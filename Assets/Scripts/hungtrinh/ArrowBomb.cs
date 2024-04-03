@@ -36,7 +36,7 @@ namespace hungtrinh
         protected override void Update()
         {
             base.Update();
-            if (Input.GetKey(KeyCode.Space) && scaleArrowCurrent < maxClampScale && isAllowScale)
+            if (Input.GetMouseButtonDown(0) /*&& scaleArrowCurrent < maxClampScale && isAllowScale*/)
             {
                 scaleArrowCurrent += scaleForce * Time.deltaTime;
                 AppleScaleToArrow(scaleArrowCurrent);
@@ -105,7 +105,7 @@ namespace hungtrinh
                 return;
             }
 
-            if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Ground")
+            if (/*collision.gameObject.tag == "Wall" ||*/ collision.gameObject.tag == "Ground")
             {
                 this.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 isAllowScale                                        = false;

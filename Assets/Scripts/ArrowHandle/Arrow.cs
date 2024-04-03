@@ -5,6 +5,7 @@ public class Arrow : MonoBehaviour
 {
     [SerializeField] [ReadOnlyInspector] protected float z;
     [SerializeField] [ReadOnlyInspector]           bool  lateStart;
+    [SerializeField] Collider2D col;
 
     [SerializeField] protected int         Damage = 5;
     public                     Rigidbody2D rigid;
@@ -20,6 +21,8 @@ public class Arrow : MonoBehaviour
         {
             rigid = GetComponent<Rigidbody2D>();
         }
+
+        col = GetComponent<Collider2D>();
     }
 
     protected virtual void Start() { }
@@ -43,12 +46,12 @@ public class Arrow : MonoBehaviour
             z -= 5;
         }
 
-        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Ground")
+        if (/*collision.gameObject.tag == "Wall" || */collision.gameObject.tag == "Ground")
         {
             isHit = true;
-            
+
             this.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
 

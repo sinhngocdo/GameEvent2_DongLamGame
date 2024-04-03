@@ -47,7 +47,7 @@ public class BulletShooting : MonoBehaviour
     private void Update()
     {
         fireElapsedTime += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) && fireElapsedTime >= fireRate)
+        if (Input.GetMouseButton(0) && fireElapsedTime >= fireRate)
         {
             if (nextTypeArrowFire == ArrowType.control)
             {
@@ -72,7 +72,7 @@ public class BulletShooting : MonoBehaviour
 
 
         //press space up to shoot
-        if (Input.GetKeyUp(KeyCode.Space) && fireElapsedTime >= fireRate /*&& arrowIntaracting == null*/)
+        if (Input.GetMouseButtonUp(0) && fireElapsedTime >= fireRate /*&& arrowIntaracting == null*/)
         {
             BulletShootHandle();
         }

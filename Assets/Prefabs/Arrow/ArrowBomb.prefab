@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   z: 0
   lateStart: 0
+  col: {fileID: 0}
   Damage: 20
   rigid: {fileID: 6379429508150798286}
   arrowInteracting: {fileID: 0}
@@ -194,7 +195,7 @@ MonoBehaviour:
   bombRange: 4
   scaleArrowCurrent: 1
   maxClampScale: 3
-  delayBomb: 1
+  delayBomb: 0
   scaleForce: 0.7
   interactBomb:
     serializedVersion: 2

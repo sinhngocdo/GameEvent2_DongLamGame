@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] CatHandle cat1;
     [SerializeField] CatHandle cat2;
+
+    Vector3 posStartSpawn;
+    Vector3 posEndSpawn;
 
     void Awake()
     {
@@ -31,8 +35,18 @@ public class GameManager : MonoBehaviour
         if(cat1.IsShoot() && cat2.IsShoot())
         {
             Debug.Log("Game Win");
-            panelWin.SetActive(true);
+            //panelWin.SetActive(true);
+            SpawnRope();
+
         }
+    }
+
+    private void SpawnRope()
+    {
+        posStartSpawn = cat1.transform.position;
+        posEndSpawn = cat2.transform.position;
+
+
     }
 
     public void ReloadScene()
