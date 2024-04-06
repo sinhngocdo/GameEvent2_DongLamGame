@@ -13,8 +13,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] CatHandle cat1;
     [SerializeField] CatHandle cat2;
 
+    [SerializeField] bool isMark = false;
+
+
     Vector3 posStartSpawn;
     Vector3 posEndSpawn;
+
+    public bool IsMark { get => isMark; set => isMark = value; }
 
     void Awake()
     {
@@ -28,6 +33,8 @@ public class GameManager : MonoBehaviour
         }
 
         panelWin.SetActive(false);
+
+        isMark = false;
     }
 
     private void Update()
@@ -36,17 +43,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Game Win");
             //panelWin.SetActive(true);
-            SpawnRope();
-
+            isMark = true;
         }
-    }
-
-    private void SpawnRope()
-    {
-        posStartSpawn = cat1.transform.position;
-        posEndSpawn = cat2.transform.position;
-
-
     }
 
     public void ReloadScene()
