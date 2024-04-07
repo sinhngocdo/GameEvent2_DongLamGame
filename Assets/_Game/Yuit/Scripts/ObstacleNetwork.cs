@@ -45,23 +45,11 @@ public class ObstacleNetwork : MonoBehaviour
             deadSteps.ActiveStep(2);
             isDestroyed = true;
             OnDead?.Invoke(true);
-            OnDestroy();
+            this.DelayInactiveObject(this.gameObject, 5);
         }
         else if (hittableStatus.LowHealthPercent >= (float)currentHealth / hittableStatus.Health)
         {
             deadSteps.ActiveStep(1);
-        }
-    }
-
-    public void OnDestroy()
-    {
-        StartCoroutine(HideObject());
-        return;
-
-        IEnumerator HideObject()
-        {
-            yield return new WaitForSeconds(5);
-            this.gameObject.SetActive(false);
         }
     }
     

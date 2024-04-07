@@ -27,7 +27,10 @@ public static class YUtilities
 
     public static void DelayInactiveObject(this MonoBehaviour mono, GameObject target, float time)
     {
-        mono.DelayAction(() => target.SetActive(false), time);
+        mono.DelayAction(() =>
+        {
+            if (target) target.SetActive(false);
+        }, time);
     }
 }
 
