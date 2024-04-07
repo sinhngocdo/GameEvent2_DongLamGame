@@ -54,10 +54,3 @@ public static class LayersMask
     public const int Player = 1 << LayersID.Player;
     public const int Hittable = 1 << LayersID.Hittable;
 }
-
-public static class Layers
-{
-    public const int defaultLayer = 0;
-    public const int playerLayer = 9;
-    public const int hittableLayer = 11;
-}
