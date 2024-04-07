@@ -378,7 +378,7 @@ PrefabInstance:
     - target: {fileID: 2816259002912853582, guid: 57a8d07617db46849999f2496b45da89, type: 3}
       propertyPath: arrowNormal
       value: 
-      objectReference: {fileID: -8673110137715976717, guid: 3dbdcb15eccd74e4796094d9a677a3cf, type: 3}
+      objectReference: {fileID: 608001528347366084, guid: 3dbdcb15eccd74e4796094d9a677a3cf, type: 3}
     - target: {fileID: 2816259002912853582, guid: 57a8d07617db46849999f2496b45da89, type: 3}
       propertyPath: arrowControl
       value: 
@@ -1743,6 +1743,10 @@ PrefabInstance:
     - target: {fileID: 1006978394140401636, guid: eb17cae41971ac4479a7e519baf0a2e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213108041478334216, guid: eb17cae41971ac4479a7e519baf0a2e5, type: 3}
+      propertyPath: m_Distance
+      value: 2.3626842
       objectReference: {fileID: 0}
     - target: {fileID: 6207969394573008226, guid: eb17cae41971ac4479a7e519baf0a2e5, type: 3}
       propertyPath: m_Name

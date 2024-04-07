@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 6379429508150798286}
   - component: {fileID: 6417802643513487609}
   - component: {fileID: 7307314347702740500}
-  - component: {fileID: -8673110137715976717}
   - component: {fileID: 608001528347366084}
   m_Layer: 8
   m_Name: ArrowExplose
@@ -206,24 +205,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 10
---- !u!114 &-8673110137715976717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3288169068868593581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff307c0c1750fd4ab3a8ba4957ca358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  z: 0
-  lateStart: 0
-  col: {fileID: 0}
-  Damage: 5
-  rigid: {fileID: 0}
-  arrowInteracting: {fileID: 0}
 --- !u!114 &608001528347366084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +222,7 @@ MonoBehaviour:
   col: {fileID: 6417802643513487609}
   Damage: 5
   rigid: {fileID: 6379429508150798286}
-  arrowInteracting: {fileID: -8673110137715976717}
+  arrowInteracting: {fileID: 608001528347366084}
   explosionPrefab: {fileID: 9062903340280328651, guid: 5d1362aa019d1c94da0972f726c0e254, type: 3}
   explosionData:
     CenterExpolosion: {x: 0, y: 0, z: 0}

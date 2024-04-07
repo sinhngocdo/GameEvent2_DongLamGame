@@ -55,7 +55,7 @@ public class Arrow : MonoBehaviour
         }
 
 
-        if (collision.gameObject.TryGetComponent<IHittableObject>(out var hit))
+        if (collision.gameObject.TryGetComponent<IHittable>(out var hit))
         {
             HitInfo hitInfo = new HitInfo()
             {
