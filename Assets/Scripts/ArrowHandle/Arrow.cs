@@ -11,7 +11,7 @@ public class Arrow : MonoBehaviour
     public                     Rigidbody2D rigid;
     public                     Arrow       arrowInteracting;
 
-    bool isHit = false;
+    protected bool isHit = false;
 
 
     protected virtual void Awake()
