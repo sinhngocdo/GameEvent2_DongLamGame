@@ -35,6 +35,6 @@ public class ExplosionForce : MonoBehaviour
             listRay[i].collider.GetComponent<IHittable>()?.OnHit(hitInfo);
         }
         
-        this.DelayInactiveObject(this.gameObject, 5);
+        this.DelayInactiveObject(5, this.gameObject);
     }
 }

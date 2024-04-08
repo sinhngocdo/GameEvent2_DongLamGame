@@ -5,7 +5,23 @@ using UnityEngine;
 
 public static class YUtilities
 {
-    public static void ActiveStep (this IList<GameObject> steps, int activeIndex)
+    public static bool LinkWithSpringJoint(ILinkerWire targetFrom, ILinkerWire targetTo, float percentDistance, float linkTime)
+    {
+        var rigidbodyTo = targetTo.GetTarget();
+        if (!rigidbodyTo) return false;
+
+        var springData = targetFrom.CreateWire();
+        springData.connectedBody = rigidbodyTo;
+
+        springData.autoConfigureDistance = false;
+        springData.distance = Vector2.Distance(rigidbodyTo.transform.position, springData.transform.position) * percentDistance;
+        springData.enabled = true;
+        
+        Updater.Instance.Delay(linkTime, targetFrom.RemoveWire);
+        return true;
+    }
+    
+    public static void ActiveStep(this IList<GameObject> steps, int activeIndex)
     {
         for (var i = 0; i < steps.Count; i++)
         {
@@ -13,8 +29,9 @@ public static class YUtilities
         }
     }
     
-    public static void DelayAction(this MonoBehaviour mono, Action action, float time)
+    public static void Delay(this MonoBehaviour mono, float time, Action action)
     {
+        if (!CheckerCoroutine(mono, action)) return;
         mono.StartCoroutine(ActiveTime());
         return;
 
@@ -25,12 +42,33 @@ public static class YUtilities
         }
     }
 
-    public static void DelayInactiveObject(this MonoBehaviour mono, GameObject target, float time)
+    public static void Delay(this MonoBehaviour mono, int frame, Action action)
     {
-        mono.DelayAction(() =>
+        if (!CheckerCoroutine(mono, action)) return;
+        mono.StartCoroutine(ActiveTime());
+        return;
+        
+        IEnumerator ActiveTime()
+        {
+            for (var i = 0; i < frame; i++)
+            {
+                yield return null;
+            }
+            action();
+        }
+    }
+
+    public static void DelayInactiveObject(this MonoBehaviour mono, float time, GameObject target)
+    {
+        mono.Delay(time, () =>
         {
             if (target) target.SetActive(false);
-        }, time);
+        });
+    }
+
+    private static bool CheckerCoroutine(MonoBehaviour mono, Action action)
+    {
+        return mono && mono.isActiveAndEnabled && action != null;
     }
 }
 

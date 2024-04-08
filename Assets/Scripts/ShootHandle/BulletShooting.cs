@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using hungtrinh;
 using UnityEngine;
 
@@ -8,14 +9,20 @@ public enum ArrowType
     normal   = 5,
     threeray = 10,
     bomb     = 15,
-    control  = 20
+    control  = 20,
+    Wire     = 25,
 }
 
 public class BulletShooting : MonoBehaviour
 {
     [Header("****Bullet display****")] [SerializeField]
     Transform shootPoint;
+    
+    [Header("WIRE")]
+    [SerializeField] private Arrow arrowWire;
+    public ILinkerWire linkerForm;
 
+    [Header("INPUT")]
     [SerializeField] Arrow     arrowNormal;
     [SerializeField] Arrow     arrow3ray;
     [SerializeField] Arrow     arrowBomb;
@@ -42,6 +49,7 @@ public class BulletShooting : MonoBehaviour
     private void Start()
     {
         fireElapsedTime = fireRate;
+        nextTypeArrowFire = ArrowType.Wire;
     }
 
     private void Update()
@@ -93,6 +101,10 @@ public class BulletShooting : MonoBehaviour
         {
             nextTypeArrowFire = ArrowType.control;
         }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            nextTypeArrowFire = ArrowType.Wire;
+        }
 
     }
 
@@ -113,6 +125,10 @@ public class BulletShooting : MonoBehaviour
                 break;
             case ArrowType.control:
                 arrowFire = Instantiate(arrowControl, shootPoint.position, shootPoint.rotation);
+                break;
+            case ArrowType.Wire:
+                arrowFire = Instantiate(arrowWire, shootPoint.position, shootPoint.rotation);
+                (arrowFire as ArrowWire)!.shooterSource = this;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
