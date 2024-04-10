@@ -41,12 +41,12 @@ public class Arrow : MonoBehaviour
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "DotCircle")
+        if (collision.CompareTag("DotCircle"))
         {
             z -= 5;
         }
 
-        if (/*collision.gameObject.tag == "Wall" || */collision.gameObject.tag == "Ground")
+        if (/*collision.gameObject.tag == "Wall" || */collision.CompareTag("Ground"))
         {
             isHit = true;
 

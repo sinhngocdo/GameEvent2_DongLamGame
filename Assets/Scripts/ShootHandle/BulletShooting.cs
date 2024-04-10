@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using hungtrinh;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public enum ArrowType
@@ -15,8 +16,12 @@ public enum ArrowType
 
 public class BulletShooting : MonoBehaviour
 {
-    [Header("****Bullet display****")] [SerializeField]
+    [Header("****Bullet display****")] 
+    [SerializeField]
     Transform shootPoint;
+
+    [SerializeField] private CustomInput playerInput;
+    [SerializeField] private InputAction mouseClick;
     
     [Header("WIRE")]
     [SerializeField] private Arrow arrowWire;
@@ -30,6 +35,7 @@ public class BulletShooting : MonoBehaviour
     [SerializeField] float     bulletSpeed       = 0f;
     [SerializeField] float     speedGathering    = 2f;
     [SerializeField] ArrowType nextTypeArrowFire = ArrowType.normal;
+     
 
 
     [Space] [Header("DelayShoot")] [SerializeField]
@@ -50,12 +56,16 @@ public class BulletShooting : MonoBehaviour
     {
         fireElapsedTime = fireRate;
         nextTypeArrowFire = ArrowType.Wire;
+
+        playerInput = new CustomInput();
+        mouseClick = playerInput.Player.MouseClick;
+        playerInput.Player.Enable();
     }
 
     private void Update()
     {
         fireElapsedTime += Time.deltaTime;
-        if (Input.GetMouseButton(0) && fireElapsedTime >= fireRate)
+        if (mouseClick.IsPressed() && fireElapsedTime >= fireRate)
         {
             if (nextTypeArrowFire == ArrowType.control)
             {
@@ -80,7 +90,7 @@ public class BulletShooting : MonoBehaviour
 
 
         //press space up to shoot
-        if (Input.GetMouseButtonUp(0) && fireElapsedTime >= fireRate /*&& arrowIntaracting == null*/)
+        if (mouseClick.WasReleasedThisFrame() && fireElapsedTime >= fireRate /*&& arrowIntaracting == null*/)
         {
             BulletShootHandle();
         }
