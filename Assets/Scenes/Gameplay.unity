@@ -435,6 +435,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7660645908686805913, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: screenPos.m_Name
+      value: Screen Pos
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660645908686805913, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: screenPos.m_ExpectedControlType
+      value: Vector2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660645908686805913, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: screenPos.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660645908686805913, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: screenPos.m_SingletonActionBindings.Array.data[0].m_Id
+      value: be8afdbf-e6e6-4ff2-b412-13c1c27e4dc9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660645908686805913, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: screenPos.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/position
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660645908686805913, guid: 57a8d07617db46849999f2496b45da89, type: 3}
+      propertyPath: screenPos.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Screen Pos
+      objectReference: {fileID: 0}
     - target: {fileID: 8093724000019090031, guid: 57a8d07617db46849999f2496b45da89, type: 3}
       propertyPath: m_Name
       value: Player
