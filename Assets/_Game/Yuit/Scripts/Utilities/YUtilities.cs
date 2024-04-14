@@ -20,6 +20,23 @@ public static class YUtilities
         Updater.Instance.Delay(linkTime, targetFrom.RemoveWire);
         return true;
     }
+
+    public static bool LinkWithSpringJoint(this WireConnector wire, Rigidbody2D from, Rigidbody2D to, float percentDistance, float linkTime)
+    {
+        if (!from || !to) return false;
+
+        wire.Init(from, to);
+        wire.transform.SetPositionAndRotation(GetPointBetweenTransforms(from.transform, to.transform) + Vector3.up * 5, Quaternion.identity);
+        wire.Raise(percentDistance, linkTime);
+
+        return true;
+    }
+
+    public static Vector3 GetPointBetweenTransforms(Transform transform1, Transform transform2)
+    {
+        return (transform1.position + transform2.position) / 2f;;
+    }
+
     
     public static void ActiveStep(this IList<GameObject> steps, int activeIndex)
     {

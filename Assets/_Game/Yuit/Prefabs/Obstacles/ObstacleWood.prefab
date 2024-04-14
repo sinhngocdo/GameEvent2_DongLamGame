@@ -169,6 +169,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.6509434
       objectReference: {fileID: 0}
+    - target: {fileID: 7089956255934004606, guid: cce0dd6358df4fa40bfd385b57772672, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8298093345079399828, guid: cce0dd6358df4fa40bfd385b57772672, type: 3}
       propertyPath: m_Name
       value: WoodenVerticaBar
