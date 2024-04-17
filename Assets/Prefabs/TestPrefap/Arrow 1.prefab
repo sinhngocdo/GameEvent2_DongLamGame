@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 6379429508150798286}
   - component: {fileID: 6417802643513487609}
   - component: {fileID: 7307314347702740500}
-  - component: {fileID: 4603127307564905492}
-  - component: {fileID: 3572281596666237987}
+  - component: {fileID: -8673110137715976717}
   m_Layer: 0
-  m_Name: ArrowWire
+  m_Name: Arrow 1
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +144,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.6769718, y: -0.03968537}
@@ -174,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 10
---- !u!114 &4603127307564905492
+--- !u!114 &-8673110137715976717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,25 +182,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3288169068868593581}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11f797d53770f8b4ab011092904706a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ff307c0c1750fd4ab3a8ba4957ca358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   z: 0
   lateStart: 0
-  col: {fileID: 6417802643513487609}
+  col: {fileID: 0}
   Damage: 5
-  rigid: {fileID: 6379429508150798286}
-  arrowInteracting: {fileID: 4603127307564905492}
-  shooterSource: {fileID: 0}
---- !u!114 &3572281596666237987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3288169068868593581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdb3f870f7a04f41b47dd9edbd52f3d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
+  arrowInteracting: {fileID: 0}
