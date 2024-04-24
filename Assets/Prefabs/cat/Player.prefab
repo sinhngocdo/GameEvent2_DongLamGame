@@ -246,11 +246,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 644773432092976195}
-  arrowPrefab: {fileID: 3288169068868593581, guid: 3dbdcb15eccd74e4796094d9a677a3cf, type: 3}
-  arrowSpeed: 0
+  mouseClick:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 27a123d1-317c-430a-846b-9b353dd365d9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  arrowWire: {fileID: 0}
+  arrowNormal: {fileID: 0}
+  arrow3ray: {fileID: 0}
+  arrowBomb: {fileID: 0}
+  arrowControl: {fileID: 0}
+  bulletSpeed: 0
   speedGathering: 4
+  nextTypeArrowFire: 5
   fireRate: 0
   fireElapsedTime: 0
+  arrowIntaracting: {fileID: 0}
   lineRenderer: {fileID: 1274978302626114650}
   linePoints: 2
   timeIntervalinPoints: 0.1
@@ -431,7 +446,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd8479c4cb8d0d439a7ec34c07fbe3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0
+  screenPos:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 644a39f4-e71e-41de-86e2-31fc27da6e56
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &8093724000019090031
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +464,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3685905786612899924}
-  - component: {fileID: 6580096539769710983}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -466,15 +488,3 @@ Transform:
   - {fileID: 9170858342636237404}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6580096539769710983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8093724000019090031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 832959dd0d9601241a48d52759299d16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

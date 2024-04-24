@@ -8,21 +8,26 @@ public class Bow : MonoBehaviour
 {
     Vector2 direction;
     
-    [SerializeField] private InputAction screenPos;
+    private CustomInput screenPos;
 
     private Vector2 curMousePos;
     private Vector2 bowPos;
-    
+
+    private void Awake()
+    {
+        screenPos = new CustomInput();
+    }
 
     private void OnEnable()
     {
         screenPos.Enable();
 
-        screenPos.performed += OnMousePos;
+        screenPos.Player.MousePosition.performed += OnMousePos;
     }
     private void OnDisable()
     {
         screenPos.Disable();
+        screenPos.Player.MousePosition.performed -= OnMousePos;
     }
 
     private void OnMousePos(InputAction.CallbackContext context)

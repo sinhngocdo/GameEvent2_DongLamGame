@@ -11,6 +11,8 @@ TagManager:
   - Wall
   - DotCircle
   - Cat
+  - Red
+  - Blue
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - Ground
   - 
   - HittableObject
-  - 
+  - Cat
   - 
   - 
   - 

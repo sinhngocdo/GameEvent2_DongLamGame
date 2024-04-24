@@ -603,6 +603,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1812096714}
     m_Modifications:
+    - target: {fileID: 231564454937056668, guid: 80236d07568450044a2cfda35be7df4f, type: 3}
+      propertyPath: hittableStatus.obstacleType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7122428079169431065, guid: 80236d07568450044a2cfda35be7df4f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -956,7 +960,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7122428079169431065, guid: 80236d07568450044a2cfda35be7df4f, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< Updated upstream
       value: 5.09
+=======
+      value: -0
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7122428079169431065, guid: 80236d07568450044a2cfda35be7df4f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2138,7 +2146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2695093916395649607, guid: 9137b1acb69fd3342be8e2d94d53f235, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: -757.71
+=======
+      value: -750.6
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2695093916395649607, guid: 9137b1acb69fd3342be8e2d94d53f235, type: 3}
       propertyPath: m_LocalPosition.y
