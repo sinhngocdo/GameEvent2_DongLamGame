@@ -9,6 +9,7 @@ public class CatAI : MonoBehaviour
 {
     [Header("Pathfinding")] 
     [CanBeNull] private GameObject target;
+    public float activateDistance = 50f;
     public float pathUpdateSecond = 0.5f;
 
     [Header("Physics")] 
@@ -44,15 +45,17 @@ public class CatAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isFollowEnabled)
-        {
-            PathFollow();
-        }
-
         if (target == null)
         {
             UpdateTarget();
         }
+        
+        if (TargetInDistance()  && isFollowEnabled)
+        {
+            PathFollow();
+        }
+
+        
     }
 
 
@@ -80,7 +83,7 @@ public class CatAI : MonoBehaviour
     {
         if (target != null)
         {
-            if (isFollowEnabled && _seeker.IsDone())
+            if (isFollowEnabled && TargetInDistance() && _seeker.IsDone())
             {
                 _seeker.StartPath(_rb.position, target.transform.position, OnPathComplelete);
             }
@@ -141,6 +144,11 @@ public class CatAI : MonoBehaviour
         
         
 
+    }
+    
+    private bool TargetInDistance()
+    {
+        return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
     }
 
     void OnPathComplelete(Path p)

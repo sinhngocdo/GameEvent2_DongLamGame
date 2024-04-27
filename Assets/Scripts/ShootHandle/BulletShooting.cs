@@ -12,6 +12,8 @@ public enum ArrowType
     bomb     = 15,
     control  = 20,
     Wire     = 25,
+    RedHeart = 30,
+    BlueHeart = 35,
 }
 
 public class BulletShooting : MonoBehaviour
@@ -28,10 +30,12 @@ public class BulletShooting : MonoBehaviour
     public ILinkerWire linkerForm;
 
     [Header("INPUT")]
-    [SerializeField] Arrow     arrowNormal;
-    [SerializeField] Arrow     arrow3ray;
-    [SerializeField] Arrow     arrowBomb;
-    [SerializeField] Arrow     arrowControl;
+    // [SerializeField] Arrow     arrowNormal;
+    // [SerializeField] Arrow     arrow3ray;
+    // [SerializeField] Arrow     arrowBomb;
+    // [SerializeField] Arrow     arrowControl;
+    [SerializeField] private Arrow arrowRedHeart;
+    [SerializeField] private Arrow arrowBlueHeart;
     [SerializeField] float     bulletSpeed       = 0f;
     [SerializeField] float     speedGathering    = 2f;
     [SerializeField] ArrowType nextTypeArrowFire = ArrowType.normal;
@@ -55,7 +59,7 @@ public class BulletShooting : MonoBehaviour
     private void Start()
     {
         fireElapsedTime = fireRate;
-        nextTypeArrowFire = ArrowType.Wire;
+        nextTypeArrowFire = ArrowType.BlueHeart;
 
         playerInput = new CustomInput();
         mouseClick = playerInput.Player.MouseClick;
@@ -67,10 +71,10 @@ public class BulletShooting : MonoBehaviour
         fireElapsedTime += Time.deltaTime;
         if (mouseClick.IsPressed() && fireElapsedTime >= fireRate)
         {
-            if (nextTypeArrowFire == ArrowType.control)
-            {
-                BulletShootHandle();
-            }
+            // if (nextTypeArrowFire == ArrowType.BlueHeart)
+            // {
+            //     BulletShootHandle();
+            // }
 
             if (bulletSpeed < bulletSpeedMax)
             {
@@ -97,24 +101,24 @@ public class BulletShooting : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            nextTypeArrowFire = ArrowType.normal;
+            nextTypeArrowFire = ArrowType.BlueHeart;
         }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            nextTypeArrowFire = ArrowType.threeray;
-        }
+        // if (Input.GetKeyDown(KeyCode.W))
+        // {
+        //     nextTypeArrowFire = ArrowType.threeray;
+        // }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            nextTypeArrowFire = ArrowType.bomb;
+            nextTypeArrowFire = ArrowType.RedHeart;
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            nextTypeArrowFire = ArrowType.control;
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            nextTypeArrowFire = ArrowType.Wire;
-        }
+        // if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     nextTypeArrowFire = ArrowType.control;
+        // }
+        // if (Input.GetKeyDown(KeyCode.T))
+        // {
+        //     nextTypeArrowFire = ArrowType.Wire;
+        // }
 
     }
 
@@ -124,17 +128,23 @@ public class BulletShooting : MonoBehaviour
         Arrow arrowFire = null;
         switch (nextTypeArrowFire)
         {
-            case ArrowType.normal:
-                arrowFire = Instantiate(arrowNormal, shootPoint.position, shootPoint.rotation);
+            // case ArrowType.normal:
+            //     arrowFire = Instantiate(arrowNormal, shootPoint.position, shootPoint.rotation);
+            //     break;
+            // case ArrowType.threeray:
+            //     arrowFire = Instantiate(arrow3ray, shootPoint.position, shootPoint.rotation);
+            //     break;
+            // case ArrowType.bomb:
+            //     arrowFire = Instantiate(arrowBomb, shootPoint.position, shootPoint.rotation);
+            //     break;
+            // case ArrowType.control:
+            //     arrowFire = Instantiate(arrowControl, shootPoint.position, shootPoint.rotation);
+            //     break;
+            case ArrowType.RedHeart:
+                arrowFire = Instantiate(arrowRedHeart, shootPoint.position, shootPoint.rotation);
                 break;
-            case ArrowType.threeray:
-                arrowFire = Instantiate(arrow3ray, shootPoint.position, shootPoint.rotation);
-                break;
-            case ArrowType.bomb:
-                arrowFire = Instantiate(arrowBomb, shootPoint.position, shootPoint.rotation);
-                break;
-            case ArrowType.control:
-                arrowFire = Instantiate(arrowControl, shootPoint.position, shootPoint.rotation);
+            case ArrowType.BlueHeart:
+                arrowFire = Instantiate(arrowBlueHeart, shootPoint.position, shootPoint.rotation);
                 break;
             case ArrowType.Wire:
                 arrowFire = Instantiate(arrowWire, shootPoint.position, shootPoint.rotation);
