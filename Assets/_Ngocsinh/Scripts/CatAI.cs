@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using Pathfinding;
+using Ngocsinh.Observer;
 
 public class CatAI : MonoBehaviour
 {
@@ -33,29 +34,48 @@ public class CatAI : MonoBehaviour
 
     [SerializeField] private ArrowHearType arrowType;
 
+
+    private void Awake()
+    {
+        isFollowEnabled = false;
+    }
+
     private void Start()
     {
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
 
         target = null;
+        this.RegisterListener(EventID.OnWalkable, (param) => OnWalkableToHeart());
+        this.RegisterListener(EventID.OnArrowHeartDestroy, (param) => OnArrowHeartDestroy());
         
         InvokeRepeating("UpdatePath", 0f, pathUpdateSecond);
     }
 
     private void FixedUpdate()
     {
-        if (target == null)
-        {
-            UpdateTarget();
-        }
         
-        if (TargetInDistance()  && isFollowEnabled)
+        
+        if (TargetInDistance())
         {
             PathFollow();
         }
 
         
+    }
+
+    void OnWalkableToHeart()
+    {
+        
+        UpdateTarget();
+        
+
+        isFollowEnabled = true;
+    }
+
+    void OnArrowHeartDestroy()
+    {
+        isFollowEnabled = false;
     }
 
 
@@ -148,7 +168,12 @@ public class CatAI : MonoBehaviour
     
     private bool TargetInDistance()
     {
-        return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
+        if (isFollowEnabled && target != null)
+        {
+            return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
+        }
+
+        return false;
     }
 
     void OnPathComplelete(Path p)

@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject panelWin;
 
-    [SerializeField] CatHandle cat1;
-    [SerializeField] CatHandle cat2;
+    [SerializeField] CatAI cat1;
+    [SerializeField] CatAI cat2;
 
     [SerializeField] bool isMark = false;
 
@@ -39,12 +39,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(cat1.IsShoot() && cat2.IsShoot())
-        {
-            Debug.Log("Game Win");
-            //panelWin.SetActive(true);
-            isMark = true;
-        }
+        
     }
 
     public void ReloadScene()

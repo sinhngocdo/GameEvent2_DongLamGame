@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9102596170343791840}
   - component: {fileID: 659499202288038691}
   - component: {fileID: 3126673096431226413}
-  - component: {fileID: 4036310624678012456}
   - component: {fileID: 3574649826056399275}
+  - component: {fileID: -5784428300674073799}
   m_Layer: 0
   m_Name: BlueHeart
   m_TagString: Blue
@@ -160,19 +160,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61, y: 0.53}
   m_EdgeRadius: 0
---- !u!114 &4036310624678012456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4507824651440087773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4895fb9aa47c66c459538fb008bc6867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDestroy: 3
 --- !u!114 &3574649826056399275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,3 +179,16 @@ MonoBehaviour:
   rigid: {fileID: 659499202288038691}
   arrowInteracting: {fileID: 3574649826056399275}
   arrowHeartType: 1
+--- !u!114 &-5784428300674073799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507824651440087773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4895fb9aa47c66c459538fb008bc6867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 10
