@@ -32,7 +32,7 @@ public class CatAI : MonoBehaviour
     private Seeker _seeker;
     private Rigidbody2D _rb;
 
-    [SerializeField] private ArrowHearType arrowType;
+    [SerializeField] internal ArrowHearType arrowType;
 
 
     private void Awake()
@@ -46,24 +46,27 @@ public class CatAI : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
 
         target = null;
-        this.RegisterListener(EventID.OnWalkable, (param) => OnWalkableToHeart());
-        this.RegisterListener(EventID.OnArrowHeartDestroy, (param) => OnArrowHeartDestroy());
         
+        ListeningEvent();
+
         InvokeRepeating("UpdatePath", 0f, pathUpdateSecond);
     }
 
+
     private void FixedUpdate()
     {
-        
-        
         if (TargetInDistance())
         {
             PathFollow();
         }
-
-        
     }
 
+    private void ListeningEvent()
+    {
+        this.RegisterListener(EventID.OnWalkable, (param) => OnWalkableToHeart());
+        this.RegisterListener(EventID.OnArrowHeartDestroy, (param) => OnArrowHeartDestroy());
+    }
+    
     void OnWalkableToHeart()
     {
         
@@ -126,8 +129,18 @@ public class CatAI : MonoBehaviour
 
         isGrounded = Physics2D.Raycast(transform.position, -Vector3.up, GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset);
 
-        Vector2 direction = ((Vector2)_path.vectorPath[currentWaypoint] - _rb.position).normalized;
+        // Vector2 direction = ((Vector2)_path.vectorPath[currentWaypoint] - _rb.position).normalized;
+        Vector2 direction = ((Vector2)_path.vectorPath[currentWaypoint] - _rb.position);
+        // Vector2 direction = ((Vector2)_path.vectorPath[currentWaypoint]).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
+        
+        Vector2 targetPosition = _path.vectorPath[currentWaypoint];
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        
+        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            currentWaypoint++;
+        }
 
         //jump
         if (isJumpEnabled && isGrounded)
@@ -139,7 +152,7 @@ public class CatAI : MonoBehaviour
         }
         
         //movement
-        _rb.AddForce(force);
+        // _rb.AddForce(force);
         
         //next waypoint
         float distance = Vector2.Distance(_rb.position, _path.vectorPath[currentWaypoint]);

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using hungtrinh;
+using Ngocsinh.Observer;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,7 +23,7 @@ public class BulletShooting : MonoBehaviour
     [SerializeField]
     Transform shootPoint;
 
-    [SerializeField] private CustomInput playerInput;
+    private CustomInput playerInput;
     [SerializeField] private InputAction mouseClick;
     
     [Header("WIRE")]
@@ -56,6 +57,10 @@ public class BulletShooting : MonoBehaviour
     [SerializeField] int   linePoints           = 15;
     [SerializeField] float timeIntervalinPoints = 0.1f;
 
+    [Header("***Other***")] 
+    [SerializeField]
+    private bool isShootable = true;
+
     private void Start()
     {
         fireElapsedTime = fireRate;
@@ -64,9 +69,31 @@ public class BulletShooting : MonoBehaviour
         playerInput = new CustomInput();
         mouseClick = playerInput.Player.MouseClick;
         playerInput.Player.Enable();
+        
+        this.RegisterListener(EventID.OnShootable, (param) => OnShootable());
+        this.RegisterListener(EventID.OnStopShoot, (param) => OnStopShoot());
     }
 
     private void Update()
+    {
+        if (isShootable)
+        {
+            Shoot();
+            ChangeArrowToShoot();
+        }
+    }
+
+    void OnShootable()
+    {
+        isShootable = true;
+    }
+
+    void OnStopShoot()
+    {
+        isShootable = false;
+    }
+
+    private void Shoot()
     {
         fireElapsedTime += Time.deltaTime;
         if (mouseClick.IsPressed() && fireElapsedTime >= fireRate)
@@ -98,11 +125,15 @@ public class BulletShooting : MonoBehaviour
         {
             BulletShootHandle();
         }
+    }
 
+    private void ChangeArrowToShoot()
+    {
         if (Input.GetKeyDown(KeyCode.Q))
         {
             nextTypeArrowFire = ArrowType.BlueHeart;
         }
+
         // if (Input.GetKeyDown(KeyCode.W))
         // {
         //     nextTypeArrowFire = ArrowType.threeray;
@@ -119,7 +150,6 @@ public class BulletShooting : MonoBehaviour
         // {
         //     nextTypeArrowFire = ArrowType.Wire;
         // }
-
     }
 
 

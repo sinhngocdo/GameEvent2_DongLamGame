@@ -15,9 +15,15 @@ public class ArrowHeart : Arrow
     public ArrowHearType arrowHeartType;
 
 
+    private void OnEnable()
+    {
+        this.PostEvent(EventID.OnStopShoot);
+    }
+
     private void OnDisable()
     {
         this.PostEvent(EventID.OnArrowHeartDestroy);
+        this.PostEvent(EventID.OnShootable);
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -26,7 +32,12 @@ public class ArrowHeart : Arrow
         this.PostEvent(EventID.OnWalkable);
         if (collision.gameObject.CompareTag("Cat"))
         {
-            Destroy(this.gameObject);
+            CatAI catAI = collision.gameObject.GetComponent<CatAI>();
+
+            if (catAI != null && catAI.arrowType == this.arrowHeartType)
+            {
+                Destroy(this.gameObject);
+            }
         }
         
     }

@@ -53,6 +53,15 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ChangeAngle"",
+                    ""type"": ""Button"",
+                    ""id"": ""94eb7089-2b31-4359-9b90-414a2784a00d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -110,6 +119,28 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d1afc6f-3922-4897-a678-0236457f2ae2"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeAngle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8506206e-008e-42de-85d8-0737e0e2c9f5"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeAngle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -121,6 +152,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         m_Player_MouseClick = m_Player.FindAction("MouseClick", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
+        m_Player_ChangeAngle = m_Player.FindAction("ChangeAngle", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,6 +217,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MouseClick;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_MousePosition;
+    private readonly InputAction m_Player_ChangeAngle;
     public struct PlayerActions
     {
         private @CustomInput m_Wrapper;
@@ -192,6 +225,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         public InputAction @MouseClick => m_Wrapper.m_Player_MouseClick;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
+        public InputAction @ChangeAngle => m_Wrapper.m_Player_ChangeAngle;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -210,6 +244,9 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @MousePosition.started += instance.OnMousePosition;
             @MousePosition.performed += instance.OnMousePosition;
             @MousePosition.canceled += instance.OnMousePosition;
+            @ChangeAngle.started += instance.OnChangeAngle;
+            @ChangeAngle.performed += instance.OnChangeAngle;
+            @ChangeAngle.canceled += instance.OnChangeAngle;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -223,6 +260,9 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @MousePosition.started -= instance.OnMousePosition;
             @MousePosition.performed -= instance.OnMousePosition;
             @MousePosition.canceled -= instance.OnMousePosition;
+            @ChangeAngle.started -= instance.OnChangeAngle;
+            @ChangeAngle.performed -= instance.OnChangeAngle;
+            @ChangeAngle.canceled -= instance.OnChangeAngle;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -245,5 +285,6 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         void OnMouseClick(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnChangeAngle(InputAction.CallbackContext context);
     }
 }
