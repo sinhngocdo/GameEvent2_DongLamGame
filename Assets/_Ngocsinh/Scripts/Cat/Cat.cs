@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using Ngocsinh.Observer;
 using UnityEngine;
 
-public class Gai : MonoBehaviour
+public class Cat : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Cat"))
         {
-            Debug.Log("Lose game");
-            this.PostEvent(EventID.OnLoseGame);
+            Debug.Log(collision.gameObject.name);
+            this.PostEvent(EventID.OnWinGame);
         }
     }
 }

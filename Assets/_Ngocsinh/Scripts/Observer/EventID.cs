@@ -6,6 +6,8 @@ public enum EventID
     OnStopShoot,
     OnWalkable,
     OnArrowHeartDestroy,
+    OnWinGame,
+    OnLoseGame,
     
     
 }
