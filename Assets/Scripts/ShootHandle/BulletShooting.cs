@@ -79,8 +79,9 @@ public class BulletShooting : MonoBehaviour
         if (isShootable)
         {
             Shoot();
-            ChangeArrowToShoot();
         }
+        ChangeArrowToShoot();
+
     }
 
     void OnShootable()
@@ -131,6 +132,8 @@ public class BulletShooting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Debug.Log("Change Arrow to blue head");
+
             nextTypeArrowFire = ArrowType.BlueHeart;
         }
 
@@ -140,6 +143,7 @@ public class BulletShooting : MonoBehaviour
         // }
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("Change Arrow to red head");
             nextTypeArrowFire = ArrowType.RedHeart;
         }
         // if (Input.GetKeyDown(KeyCode.R))
