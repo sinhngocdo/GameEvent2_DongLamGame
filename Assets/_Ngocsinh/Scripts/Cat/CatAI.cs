@@ -3,7 +3,7 @@ using UnityEngine;
 using Pathfinding;
 using Ngocsinh.Observer;
 
-public class CatAI : MonoBehaviour
+     public class CatAI : MonoBehaviour
 {
      [Header("Pathfinding")] [CanBeNull] private GameObject target;
      public                                      float      activateDistance = 50f;
@@ -31,12 +31,12 @@ public class CatAI : MonoBehaviour
      private Animator _anim;
 
 
-     private void Awake()
+     protected virtual void Awake()
      {
           isFollowEnabled = false;
      }
 
-     private void Start()
+     protected virtual void Start()
      {
           _seeker = GetComponent<Seeker>();
           _rb     = GetComponent<Rigidbody2D>();
@@ -50,7 +50,7 @@ public class CatAI : MonoBehaviour
      }
 
 
-     private void FixedUpdate()
+     protected virtual void FixedUpdate()
      {
           if (TargetInDistance() && target != null)
           {
@@ -126,7 +126,7 @@ public class CatAI : MonoBehaviour
           }
      }
 
-     void PathFollow()
+     protected virtual void PathFollow()
      {
           if (_path == null)
           {
@@ -144,6 +144,7 @@ public class CatAI : MonoBehaviour
           Vector2 direction = ((Vector2)_path.vectorPath[currentWaypoint] - _rb.position).normalized;
 
           Vector2 force = direction * (speed * Time.fixedDeltaTime);
+          Debug.Log("Force: " + force);
 
 
           //jump
@@ -207,3 +208,4 @@ public class CatAI : MonoBehaviour
           }
      }
 }
+

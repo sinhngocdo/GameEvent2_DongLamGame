@@ -95,10 +95,10 @@ GameObject:
   - component: {fileID: 7654548623730437339}
   - component: {fileID: 6012768743914765879}
   - component: {fileID: 8089658269216835890}
-  - component: {fileID: 6124585921357185462}
   - component: {fileID: 1110462473572510315}
   - component: {fileID: 7441488520120815266}
-  - component: {fileID: 1298295272557874298}
+  - component: {fileID: 8747055251517173757}
+  - component: {fileID: 1612290713509019619}
   m_Layer: 12
   m_Name: CatRed
   m_TagString: Cat
@@ -201,41 +201,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &6124585921357185462
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8059680034916847167}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.04694128, y: 0.02347064}
-  serializedVersion: 2
-  m_Radius: 0.6191323
 --- !u!95 &1110462473572510315
 Animator:
   serializedVersion: 5
@@ -285,7 +250,7 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &1298295272557874298
+--- !u!114 &8747055251517173757
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,12 +264,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateDistance: 10
   pathUpdateSecond: 0.5
-  speed: 3000
-  nextWaypointDistance: 1
+  speed: 40000
+  nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0.8
-  jumpModifier: 0.3
+  jumpModifier: 0.1
   jumpCheckOffset: 0.1
   isFollowEnabled: 1
   isJumpEnabled: 1
   isDirectionLookEnabled: 1
   arrowType: 0
+--- !u!58 &1612290713509019619
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059680034916847167}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.031731606}
+  serializedVersion: 2
+  m_Radius: 0.50843644
