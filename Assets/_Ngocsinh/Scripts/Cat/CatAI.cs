@@ -142,18 +142,9 @@ public class CatAI : MonoBehaviour
                GetComponent<Collider2D>().bounds.extents.y + jumpCheckOffset);
 
           Vector2 direction = ((Vector2)_path.vectorPath[currentWaypoint] - _rb.position).normalized;
-          // Vector2 direction = ((Vector2)_path.vectorPath[currentWaypoint] - _rb.position);
-          // Vector2 direction = ((Vector2)_path.vectorPath[currentWaypoint]).normalized;
 
           Vector2 force = direction * (speed * Time.fixedDeltaTime);
 
-          // Vector2 targetPosition = _path.vectorPath[currentWaypoint];
-          // transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
-          // if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
-          // {
-          //     currentWaypoint++;
-          // }
 
           //jump
           if (isJumpEnabled && isGrounded && arrowType == ArrowHearType.Blue)

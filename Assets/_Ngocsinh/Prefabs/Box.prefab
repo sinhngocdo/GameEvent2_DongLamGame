@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7038882869283297756}
   - component: {fileID: 3435128248392713671}
   - component: {fileID: 1688861237061834547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 7038882869283297756}
-  massValue: 4
+  massValue: 10
 --- !u!61 &1688861237061834547
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ public class Arrow : MonoBehaviour
             z -= 5;
         }
 
-        if (/*collision.gameObject.tag == "Wall" || */collision.CompareTag("Ground"))
+        if (collision.CompareTag("Wall") || collision.CompareTag("Ground"))
         {
             isHit = true;
 

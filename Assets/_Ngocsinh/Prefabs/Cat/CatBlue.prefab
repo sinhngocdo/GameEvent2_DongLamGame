@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5985123431415332476}
   - component: {fileID: 2033764805025894279}
   - component: {fileID: 4528899175878172634}
+  - component: {fileID: 664504667690469270}
   m_Layer: 12
   m_Name: CatBlue
   m_TagString: Cat
@@ -30,12 +31,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5646035940078168050}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.37, y: -3.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 265445924997163977}
+  - {fileID: 608503539520223753}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &958612213207193558
@@ -215,16 +216,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateDistance: 10
   pathUpdateSecond: 0.5
-  speed: 200
-  nextWaypointDistance: 2
+  speed: 350
+  nextWaypointDistance: 1
   jumpNodeHeightRequirement: 0.8
-  jumpModifier: 0.03
+  jumpModifier: 0.2
   jumpCheckOffset: 0.1
   isFollowEnabled: 1
   isJumpEnabled: 1
   isDirectionLookEnabled: 1
   arrowType: 1
---- !u!1 &9096096214877291943
+--- !u!114 &664504667690469270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5646035940078168050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e61e2653d930c54ea85567631e7dc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7906247124631567083
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,37 +245,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 265445924997163977}
-  - component: {fileID: 3604581310134928384}
+  - component: {fileID: 608503539520223753}
+  - component: {fileID: 7905300808250942220}
   m_Layer: 12
-  m_Name: Square (1)
+  m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &265445924997163977
+  m_IsActive: 1
+--- !u!4 &608503539520223753
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9096096214877291943}
+  m_GameObject: {fileID: 7906247124631567083}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46, y: 0.57, z: 0}
-  m_LocalScale: {x: 0.1225, y: 0.285, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 866935272866223421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3604581310134928384
+--- !u!212 &7905300808250942220
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9096096214877291943}
+  m_GameObject: {fileID: 7906247124631567083}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -296,9 +309,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 0.13705942, g: 0.9433962, b: 0.24833544, a: 0.15686275}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
