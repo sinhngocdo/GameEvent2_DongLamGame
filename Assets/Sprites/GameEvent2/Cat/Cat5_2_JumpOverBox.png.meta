@@ -1,0 +1,1231 @@
+fileFormatVersion: 2
+guid: f73dfbd3ed00fe242b4db5cf1f93e743
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 3655
+        width: 252
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7159ea24dfbb04b4394984b61cc9ad19
+      internalID: 1418982696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_1
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 3655
+        width: 252
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e1fdf16db148f47bd571bf95b2f8aa
+      internalID: 282808594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_2
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 3655
+        width: 252
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81aee9c43e2d3b4d95ce5c4c3a4619f
+      internalID: -149982853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_3
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 3655
+        width: 252
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72cb62c042a1ece4a81208d24420f8ad
+      internalID: 1811857089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_4
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 3655
+        width: 252
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9956c58a7ed43014f88a4c258d5e56f7
+      internalID: 84852585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_5
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 3655
+        width: 252
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9c634dfdcdef042865df3f0bebcbea
+      internalID: -818504833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_6
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 3655
+        width: 256
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f373a08da53cd845844468a11e1c826
+      internalID: 361632609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_7
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3048
+        width: 259
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b56263e65ceb04dac745a47abd4db7
+      internalID: -397537169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_8
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 3048
+        width: 261
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59cdc213ec1ba1459eb0c4ce2a41957
+      internalID: -460296282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_9
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 3048
+        width: 262
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a1c3d92e77cdb4aae4d17f95bdd06f
+      internalID: -1815616114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_10
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 3048
+        width: 263
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a87e43c3c72814092770038f59b62d
+      internalID: -1088331253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_11
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 3048
+        width: 264
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37cc87ae5ddb6d142a39d0697e73ecd1
+      internalID: -64546241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_12
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 3048
+        width: 260
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5031d0caba7361b4794ae14f9d60c5c2
+      internalID: -167095768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_13
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 3048
+        width: 254
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68b26769f04470408bdeb45051f18bc
+      internalID: -1475041917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_14
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 2479
+        width: 204
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1105052435c19f9449f8caf2fb0ba6c4
+      internalID: 280776709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_15
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 2521
+        width: 184
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c233e48090510ba43a95b666582c60fa
+      internalID: 1169096175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_16
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 2560
+        width: 170
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80dce915eea62f14d85b71bbed1d376f
+      internalID: 514261817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_17
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 2600
+        width: 165
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7256d74dc6ba3954faae9fb9f9451fc5
+      internalID: -2099805781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_18
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 2640
+        width: 167
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b65f4270081d8644a2785f6c4ba5c89
+      internalID: 1694784931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_19
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 2440
+        width: 243
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f312231238329438182932aee00069
+      internalID: -1394873427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_20
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 2440
+        width: 225
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5264986d927b87a4793941805765edb1
+      internalID: 197798854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_21
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 2072
+        width: 173
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4861b84356af354baf1b34636a32200
+      internalID: 1901680541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_22
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 2113
+        width: 182
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100fd99537a2cfc4d981b22fbb94e40a
+      internalID: -1036310780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_23
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 2153
+        width: 192
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc838e4d6989c6240aefda6241742b47
+      internalID: 1065627811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_24
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2194
+        width: 203
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83cc2c125a415649b8e009dfc8dadb4
+      internalID: -610635057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_25
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 2202
+        width: 217
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6504792c1e630b441b953129d57ab95d
+      internalID: -461008697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_26
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 2211
+        width: 227
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bddcdbc3ff9cff74aa09b5b9dd0595f6
+      internalID: 889475871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_27
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 2219
+        width: 239
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0043d577b0664a243baee5f5f86dc8b6
+      internalID: 1723688451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_28
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1619
+        width: 248
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dd20e5798a02840b3659fc00f4b136
+      internalID: -1465413323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_29
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1628
+        width: 253
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efcc66a181735e47807182214d424a5
+      internalID: -1891096154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_30
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1636
+        width: 256
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b89d866bb7b55c468b261f6d831366c
+      internalID: -618556900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_31
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 1628
+        width: 257
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cdcb8ba558b47346b35866a0afacf9f
+      internalID: 2018102188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_32
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 1619
+        width: 256
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ef56d3457bcdf469c70597e3a288da
+      internalID: 1634982376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_33
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 1611
+        width: 252
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7364adee5460a92499784cd1bae6066b
+      internalID: 592030536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_34
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 1603
+        width: 252
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984ee7e9623e39e4b8aba5bbbc2ad351
+      internalID: -1436570425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_35
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 987
+        width: 248
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390bb2da2e8bafa42afe396cce05c73b
+      internalID: 1528233979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_36
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 977
+        width: 241
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d77cde32831344d9cf6e0137071276
+      internalID: -800430704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_37
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 937
+        width: 235
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772a0dc3376b8a84d8dc79e580059401
+      internalID: -1374693991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_38
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 898
+        width: 225
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8eb93b9ab9d13340a68f65956db17cf
+      internalID: 466101757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_39
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 857
+        width: 213
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a6642f9a6147b49948aade985b6393
+      internalID: 706929042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_40
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 817
+        width: 198
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c5c7b0c8fa90148b543cca09505a13
+      internalID: -357006102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_41
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 776
+        width: 182
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56818f007796ed4c98c9c0716e916dd
+      internalID: 1498976913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_42
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 129
+        width: 173
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5157e36ab3cb2ff4b9919ba682838aa4
+      internalID: -845531827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_43
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 88
+        width: 165
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223a78b4ec23ada4bbd025d298bae210
+      internalID: 1343922138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_44
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 49
+        width: 166
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2cca1df15c21e4fb0cddda7ea1576d
+      internalID: 1004165838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_45
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 9
+        width: 181
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08980b59fc1b2364dab6dcf1c08cc2a5
+      internalID: 980630106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_46
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 9
+        width: 219
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d73249a449816b418e6cb6599398529
+      internalID: -71984851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_47
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 9
+        width: 240
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8568d1ca2f958f642a063aa9eaeb811c
+      internalID: -1964891250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat5_2_JumpOverBox_48
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 9
+        width: 248
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b374bbcf9f5770940911f00c569e577d
+      internalID: 597534115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Cat5_2_JumpOverBox_0: 1418982696
+      Cat5_2_JumpOverBox_1: 282808594
+      Cat5_2_JumpOverBox_10: -1088331253
+      Cat5_2_JumpOverBox_11: -64546241
+      Cat5_2_JumpOverBox_12: -167095768
+      Cat5_2_JumpOverBox_13: -1475041917
+      Cat5_2_JumpOverBox_14: 280776709
+      Cat5_2_JumpOverBox_15: 1169096175
+      Cat5_2_JumpOverBox_16: 514261817
+      Cat5_2_JumpOverBox_17: -2099805781
+      Cat5_2_JumpOverBox_18: 1694784931
+      Cat5_2_JumpOverBox_19: -1394873427
+      Cat5_2_JumpOverBox_2: -149982853
+      Cat5_2_JumpOverBox_20: 197798854
+      Cat5_2_JumpOverBox_21: 1901680541
+      Cat5_2_JumpOverBox_22: -1036310780
+      Cat5_2_JumpOverBox_23: 1065627811
+      Cat5_2_JumpOverBox_24: -610635057
+      Cat5_2_JumpOverBox_25: -461008697
+      Cat5_2_JumpOverBox_26: 889475871
+      Cat5_2_JumpOverBox_27: 1723688451
+      Cat5_2_JumpOverBox_28: -1465413323
+      Cat5_2_JumpOverBox_29: -1891096154
+      Cat5_2_JumpOverBox_3: 1811857089
+      Cat5_2_JumpOverBox_30: -618556900
+      Cat5_2_JumpOverBox_31: 2018102188
+      Cat5_2_JumpOverBox_32: 1634982376
+      Cat5_2_JumpOverBox_33: 592030536
+      Cat5_2_JumpOverBox_34: -1436570425
+      Cat5_2_JumpOverBox_35: 1528233979
+      Cat5_2_JumpOverBox_36: -800430704
+      Cat5_2_JumpOverBox_37: -1374693991
+      Cat5_2_JumpOverBox_38: 466101757
+      Cat5_2_JumpOverBox_39: 706929042
+      Cat5_2_JumpOverBox_4: 84852585
+      Cat5_2_JumpOverBox_40: -357006102
+      Cat5_2_JumpOverBox_41: 1498976913
+      Cat5_2_JumpOverBox_42: -845531827
+      Cat5_2_JumpOverBox_43: 1343922138
+      Cat5_2_JumpOverBox_44: 1004165838
+      Cat5_2_JumpOverBox_45: 980630106
+      Cat5_2_JumpOverBox_46: -71984851
+      Cat5_2_JumpOverBox_47: -1964891250
+      Cat5_2_JumpOverBox_48: 597534115
+      Cat5_2_JumpOverBox_5: -818504833
+      Cat5_2_JumpOverBox_6: 361632609
+      Cat5_2_JumpOverBox_7: -397537169
+      Cat5_2_JumpOverBox_8: -460296282
+      Cat5_2_JumpOverBox_9: -1815616114
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

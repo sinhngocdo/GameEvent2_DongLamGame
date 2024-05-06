@@ -6,7 +6,7 @@ public class StarHandle : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.CompareTag("Bullet"))
         {
             Destroy(gameObject);
         }

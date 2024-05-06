@@ -10,6 +10,9 @@ TagManager:
   - Ground
   - Wall
   - DotCircle
+  - Cat
+  - Red
+  - Blue
   layers:
   - Default
   - TransparentFX
@@ -17,13 +20,13 @@ TagManager:
   - 
   - Water
   - UI
+  - Obstacle
+  - Interactive
+  - Arrow
+  - Ground
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - HittableObject
+  - Cat
   - 
   - 
   - 
