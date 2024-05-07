@@ -17,13 +17,28 @@ public class ArrowHeart : Arrow
 
     private void OnEnable()
     {
-        this.PostEvent(EventID.OnStopShoot);
+        if (arrowHeartType == ArrowHearType.Blue)
+        {
+            this.PostEvent(EventID.OnBlueStopShoot);
+        }
+        else if (arrowHeartType == ArrowHearType.Red)
+        {
+            this.PostEvent(EventID.OnRedStopShoot);
+        }
+        
     }
 
     private void OnDisable()
     {
         this.PostEvent(EventID.OnArrowHeartDestroy);
-        this.PostEvent(EventID.OnShootable);
+        if (arrowHeartType == ArrowHearType.Blue)
+        {
+            this.PostEvent(EventID.OnBlueShootable);
+        }
+        else if (arrowHeartType == ArrowHearType.Red)
+        {
+            this.PostEvent(EventID.OnRedShootable);
+        }
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)

@@ -4,6 +4,7 @@ using hungtrinh;
 using Ngocsinh.Observer;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 
 public enum ArrowType
@@ -57,44 +58,65 @@ public class BulletShooting : MonoBehaviour
     [SerializeField] int   linePoints           = 15;
     [SerializeField] float timeIntervalinPoints = 0.1f;
 
+    [FormerlySerializedAs("isShootable")]
     [Header("***Other***")] 
     [SerializeField]
-    private bool isShootable = true;
+    private bool isBlueShootable = true;
+    [SerializeField]
+    private bool isRedShootable = true;
 
     private void Start()
     {
         fireElapsedTime = fireRate;
+        isBlueShootable = true;
+        isRedShootable = false;
         nextTypeArrowFire = ArrowType.BlueHeart;
 
         playerInput = new CustomInput();
         mouseClick = playerInput.Player.MouseClick;
         playerInput.Player.Enable();
         
-        this.RegisterListener(EventID.OnShootable, (param) => OnShootable());
-        this.RegisterListener(EventID.OnStopShoot, (param) => OnStopShoot());
+        this.RegisterListener(EventID.OnBlueShootable, (param) => OnBlueShootable());
+        this.RegisterListener(EventID.OnRedShootable, (param) => OnRedShootable());
+        this.RegisterListener(EventID.OnBlueStopShoot, (param) => OnBlueStopShoot());
+        this.RegisterListener(EventID.OnRedStopShoot, (param) => OnRedStopShoot());
     }
 
     private void Update()
     {
-        if (isShootable)
+        if (isBlueShootable)
         {
-            Shoot();
+            Shoot(nextTypeArrowFire);
+        }
+        else if (isRedShootable)
+        {
+            Shoot(nextTypeArrowFire);
         }
         ChangeArrowToShoot();
 
     }
 
-    void OnShootable()
+    void OnBlueShootable()
     {
-        isShootable = true;
+        isBlueShootable = true;
     }
 
-    void OnStopShoot()
+    void OnRedShootable()
     {
-        isShootable = false;
+        isRedShootable = true;
     }
 
-    private void Shoot()
+    void OnBlueStopShoot()
+    {
+        isBlueShootable = false;
+    }
+
+    void OnRedStopShoot()
+    {
+        isRedShootable = false;
+    }
+
+    private void Shoot(ArrowType arrowType)
     {
         fireElapsedTime += Time.deltaTime;
         if (mouseClick.IsPressed() && fireElapsedTime >= fireRate)
@@ -124,7 +146,7 @@ public class BulletShooting : MonoBehaviour
         //press space up to shoot
         if (mouseClick.WasReleasedThisFrame() && fireElapsedTime >= fireRate /*&& arrowIntaracting == null*/)
         {
-            BulletShootHandle();
+            BulletShootHandle(arrowType);
         }
     }
 
@@ -133,7 +155,8 @@ public class BulletShooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("Change Arrow to blue head");
-
+            isBlueShootable = true;
+            isRedShootable = false;
             nextTypeArrowFire = ArrowType.BlueHeart;
         }
 
@@ -144,6 +167,8 @@ public class BulletShooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Change Arrow to red head");
+            isBlueShootable = false;
+            isRedShootable = true;
             nextTypeArrowFire = ArrowType.RedHeart;
         }
         // if (Input.GetKeyDown(KeyCode.R))
@@ -157,10 +182,10 @@ public class BulletShooting : MonoBehaviour
     }
 
 
-    void BulletShootHandle()
+    void BulletShootHandle(ArrowType arrowType)
     {
         Arrow arrowFire = null;
-        switch (nextTypeArrowFire)
+        switch (arrowType)
         {
             // case ArrowType.normal:
             //     arrowFire = Instantiate(arrowNormal, shootPoint.position, shootPoint.rotation);

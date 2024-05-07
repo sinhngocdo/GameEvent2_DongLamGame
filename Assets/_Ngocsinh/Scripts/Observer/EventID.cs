@@ -2,8 +2,10 @@
 public enum EventID
 {
     None = 0,
-    OnShootable,
-    OnStopShoot,
+    OnBlueShootable,
+    OnRedShootable,
+    OnBlueStopShoot,
+    OnRedStopShoot,
     OnWalkable,
     OnArrowHeartDestroy,
     OnWinGame,
