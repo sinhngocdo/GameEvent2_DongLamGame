@@ -3163,6 +3163,10 @@ PrefabInstance:
       propertyPath: isFollowEnabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8747055251517173757, guid: bc8aa4f2c56b0dd45b41cb289f8008bc, type: 3}
+      propertyPath: nextWaypointDistance
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

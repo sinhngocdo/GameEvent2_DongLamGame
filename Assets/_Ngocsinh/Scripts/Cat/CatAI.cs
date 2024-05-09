@@ -2,8 +2,9 @@ using JetBrains.Annotations;
 using UnityEngine;
 using Pathfinding;
 using Ngocsinh.Observer;
+using Task = System.Threading.Tasks.Task;
 
-     public class CatAI : MonoBehaviour
+public class CatAI : MonoBehaviour
 {
      [Header("Pathfinding")] [CanBeNull] private GameObject target;
      public                                      float      activateDistance = 50f;
@@ -90,11 +91,18 @@ using Ngocsinh.Observer;
 
      void OnArrowHeartDestroy()
      {
-          isFollowEnabled = false;
+          if (this.arrowType == ArrowHearType.Blue && this.isFollowEnabled)
+          {
+               this.isFollowEnabled = false;
+          }
+          else if (this.arrowType == ArrowHearType.Red && this.isFollowEnabled)
+          {
+               this.isFollowEnabled = false;
+          }
      }
 
 
-     void UpdateTarget()
+     async void UpdateTarget()
      {
           if (arrowType == ArrowHearType.Blue)
           {
@@ -113,9 +121,11 @@ using Ngocsinh.Observer;
                     Debug.Log(target.name);
                }
           }
+
+          await Task.Yield();
      }
 
-     void UpdatePath()
+     async void UpdatePath()
      {
           if (target != null)
           {
@@ -124,9 +134,11 @@ using Ngocsinh.Observer;
                     _seeker.StartPath(_rb.position, target.transform.position, OnPathComplelete);
                }
           }
+
+          await Task.Yield();
      }
 
-     protected virtual void PathFollow()
+     protected async void PathFollow()
      {
           if (_path == null)
           {
@@ -169,24 +181,11 @@ using Ngocsinh.Observer;
           //direction graphic handle
           if (isDirectionLookEnabled)
           {
-               // if ()
-               // {
                transform.localScale = new Vector3(_rb.velocity.x > 0.01f ? -1f : 1, transform.localScale.y,
                     transform.localScale.z);
-               // }
-               // else if (_rb.velocity.x < -0.05f)
-               // {
-               //      transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
-               // }
-
-//                Debug.DrawRay(_rb.position, Vector3.left);
-//                var velocity = _rb.velocity;
-//                velocity.y = 0;
-//                Debug.Log(Vector3.Dot(velocity, Vector3.left));
-// //dot product , cross product
-//                transform.localScale = new Vector3(Vector3.Dot(velocity, Vector3.left), transform.localScale.y,
-//                     transform.localScale.z);
           }
+
+          await Task.Yield();
      }
 
      private bool TargetInDistance()
