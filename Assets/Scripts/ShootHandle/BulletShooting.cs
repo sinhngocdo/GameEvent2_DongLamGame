@@ -32,15 +32,11 @@ public class BulletShooting : MonoBehaviour
     public ILinkerWire linkerForm;
 
     [Header("INPUT")]
-    // [SerializeField] Arrow     arrowNormal;
-    // [SerializeField] Arrow     arrow3ray;
-    // [SerializeField] Arrow     arrowBomb;
-    // [SerializeField] Arrow     arrowControl;
     [SerializeField] private Arrow arrowRedHeart;
     [SerializeField] private Arrow arrowBlueHeart;
     [SerializeField] float     bulletSpeed       = 0f;
     [SerializeField] float     speedGathering    = 2f;
-    [SerializeField] ArrowType nextTypeArrowFire = ArrowType.normal;
+    [SerializeField] ArrowType nextTypeArrowFire = ArrowType.BlueHeart;
      
 
 
@@ -64,12 +60,18 @@ public class BulletShooting : MonoBehaviour
     private bool isBlueShootable = true;
     [SerializeField]
     private bool isRedShootable = true;
+    [SerializeField]
+    private bool isBlueDestroy = false;
+    [SerializeField]
+    private bool isRedDestroy = false;
 
     private void Start()
     {
         fireElapsedTime = fireRate;
         isBlueShootable = true;
         isRedShootable = false;
+        isBlueDestroy = true;
+        isRedDestroy = true;
         nextTypeArrowFire = ArrowType.BlueHeart;
 
         playerInput = new CustomInput();
@@ -84,36 +86,49 @@ public class BulletShooting : MonoBehaviour
 
     private void Update()
     {
-        if (isBlueShootable)
-        {
-            Shoot(nextTypeArrowFire);
-        }
-        else if (isRedShootable)
-        {
-            Shoot(nextTypeArrowFire);
-        }
         ChangeArrowToShoot();
+        if (isBlueShootable && isBlueDestroy)
+        {
+            
+            if (nextTypeArrowFire == ArrowType.BlueHeart)
+            {
+                Shoot(nextTypeArrowFire);
+            }
+        }
+        else if (isRedShootable && isRedDestroy)
+        {
+            
+            if (nextTypeArrowFire == ArrowType.RedHeart)
+            {
+                Shoot(nextTypeArrowFire);
+            }
+        }
+        
 
     }
 
     void OnBlueShootable()
     {
         isBlueShootable = true;
+        isBlueDestroy = true;
     }
 
     void OnRedShootable()
     {
         isRedShootable = true;
+        isRedDestroy = true;
     }
 
     void OnBlueStopShoot()
     {
         isBlueShootable = false;
+        isBlueDestroy = false;
     }
 
     void OnRedStopShoot()
     {
         isRedShootable = false;
+        isRedDestroy = false;
     }
 
     private void Shoot(ArrowType arrowType)
@@ -121,11 +136,6 @@ public class BulletShooting : MonoBehaviour
         fireElapsedTime += Time.deltaTime;
         if (mouseClick.IsPressed() && fireElapsedTime >= fireRate)
         {
-            // if (nextTypeArrowFire == ArrowType.BlueHeart)
-            // {
-            //     BulletShootHandle();
-            // }
-
             if (bulletSpeed < bulletSpeedMax)
             {
                 bulletSpeed += speedGathering * Time.deltaTime;
@@ -155,30 +165,21 @@ public class BulletShooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("Change Arrow to blue head");
+            
             isBlueShootable = true;
             isRedShootable = false;
             nextTypeArrowFire = ArrowType.BlueHeart;
+            
         }
-
-        // if (Input.GetKeyDown(KeyCode.W))
-        // {
-        //     nextTypeArrowFire = ArrowType.threeray;
-        // }
-        if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Change Arrow to red head");
+            
             isBlueShootable = false;
             isRedShootable = true;
             nextTypeArrowFire = ArrowType.RedHeart;
+            
         }
-        // if (Input.GetKeyDown(KeyCode.R))
-        // {
-        //     nextTypeArrowFire = ArrowType.control;
-        // }
-        // if (Input.GetKeyDown(KeyCode.T))
-        // {
-        //     nextTypeArrowFire = ArrowType.Wire;
-        // }
     }
 
 
@@ -187,18 +188,6 @@ public class BulletShooting : MonoBehaviour
         Arrow arrowFire = null;
         switch (arrowType)
         {
-            // case ArrowType.normal:
-            //     arrowFire = Instantiate(arrowNormal, shootPoint.position, shootPoint.rotation);
-            //     break;
-            // case ArrowType.threeray:
-            //     arrowFire = Instantiate(arrow3ray, shootPoint.position, shootPoint.rotation);
-            //     break;
-            // case ArrowType.bomb:
-            //     arrowFire = Instantiate(arrowBomb, shootPoint.position, shootPoint.rotation);
-            //     break;
-            // case ArrowType.control:
-            //     arrowFire = Instantiate(arrowControl, shootPoint.position, shootPoint.rotation);
-            //     break;
             case ArrowType.RedHeart:
                 arrowFire = Instantiate(arrowRedHeart, shootPoint.position, shootPoint.rotation);
                 break;

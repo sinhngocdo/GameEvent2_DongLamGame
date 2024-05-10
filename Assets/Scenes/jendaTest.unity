@@ -2934,37 +2934,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f34eb2a68a29b34f8b9b0a4bb12e13b, type: 3}
---- !u!1 &2044874095
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2044874096}
-  m_Layer: 0
-  m_Name: CatContainer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2044874096
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044874095}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 752.9123, y: 574.0709, z: -5.061024}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127760982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3375,17 +3344,16 @@ SceneRoots:
   - {fileID: 1099969470}
   - {fileID: 1869570420}
   - {fileID: 310250472}
-  - {fileID: 530905691}
-  - {fileID: 1978382812}
-  - {fileID: 2044874096}
-  - {fileID: 66046631}
-  - {fileID: 1893377881}
-  - {fileID: 607292951}
-  - {fileID: 1575986154}
   - {fileID: 1527909180}
+  - {fileID: 530905691}
+  - {fileID: 66046631}
+  - {fileID: 607292951}
+  - {fileID: 950637164}
+  - {fileID: 1686830941}
+  - {fileID: 1893377881}
   - {fileID: 1189901093}
+  - {fileID: 1978382812}
+  - {fileID: 1575986154}
   - {fileID: 5848798192643744422}
   - {fileID: 3742107144587078453}
-  - {fileID: 1686830941}
-  - {fileID: 950637164}
   - {fileID: 1453170466}
