@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 3625965447233217803}
   - component: {fileID: 3245046363681948970}
   - component: {fileID: 2899474627168533950}
+  - component: {fileID: 5394010964804320027}
   m_Layer: 5
   m_Name: SelectLvBtn
   m_TagString: Untagged
@@ -195,6 +196,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5394010964804320027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851470894677602437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b48b9e8c061234a8cfe4e50cd9567c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 2899474627168533950}
+  _panelWinGame: {fileID: 2961328862773055903}
+  panelSelectLevel: {fileID: 0}
 --- !u!1 &2325136136796080724
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +944,7 @@ GameObject:
   - component: {fileID: 3671529315060224092}
   - component: {fileID: 3810664858037423390}
   - component: {fileID: 585192572722540324}
+  - component: {fileID: 2961328862773055903}
   m_Layer: 5
   m_Name: UIWinPanel
   m_TagString: Untagged
@@ -984,7 +1001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1001,6 +1018,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2961328862773055903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4980393575836490180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fb5b0b9df20b449bca76ab716f83a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 3671529315060224092}
+  _image: {fileID: 585192572722540324}
+  _fadeValue: 225
 --- !u!1 &5230196302254531743
 GameObject:
   m_ObjectHideFlags: 0

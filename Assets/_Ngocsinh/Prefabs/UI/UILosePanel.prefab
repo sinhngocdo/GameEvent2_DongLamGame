@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6029369800151250976}
   - component: {fileID: 5176193261542810128}
   - component: {fileID: 8422696763728683536}
+  - component: {fileID: 8684174381646014135}
   m_Layer: 5
   m_Name: SelectLvBtn
   m_TagString: Untagged
@@ -120,6 +121,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8684174381646014135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052860817728474346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d323d77b9072e841b0b898791c804e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 8422696763728683536}
+  panelLoseGame: {fileID: 0}
+  panelSelectLevel: {fileID: 0}
 --- !u!1 &3071005988762365171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1018,7 @@ GameObject:
   - component: {fileID: 1798772889717034899}
   - component: {fileID: 191286767400469798}
   - component: {fileID: 128998165047431128}
+  - component: {fileID: 6085554880288323583}
   m_Layer: 5
   m_Name: UILosePanel
   m_TagString: Untagged
@@ -1057,7 +1074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.88235295}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1074,6 +1091,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6085554880288323583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875562430253584599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a22e2fb6eceae84599d3a6e640759d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8286550614620687597
 GameObject:
   m_ObjectHideFlags: 0

@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 4967747935015070040}
   - component: {fileID: 1341223257784785150}
   - component: {fileID: 2815193555744891916}
+  - component: {fileID: 3602523284202322822}
   m_Layer: 5
   m_Name: SelectLvBtn
   m_TagString: Untagged
@@ -777,6 +778,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3602523284202322822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2903758833711513978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39cf978bdfdc0243bea9b09f3b2a2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 2815193555744891916}
+  _panelSetting: {fileID: 0}
+  panelSelectLevel: {fileID: 0}
 --- !u!1 &2987594998689814862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1222,7 @@ GameObject:
   - component: {fileID: 7999742522137512711}
   - component: {fileID: 4128291674211847889}
   - component: {fileID: 8903489715705045244}
+  - component: {fileID: 3859988356722620446}
   m_Layer: 5
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -1314,6 +1331,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3859988356722620446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447074730845927639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31865db1a771c14fba928c33b1fa61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3507373627124897374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1654,7 @@ GameObject:
   - component: {fileID: 3930383891193830670}
   - component: {fileID: 7437255902654623357}
   - component: {fileID: 4592645353502133897}
+  - component: {fileID: 7323674308748883314}
   m_Layer: 5
   m_Name: UISetting
   m_TagString: Untagged
@@ -1698,6 +1728,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7323674308748883314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4273253475836395948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51af9587282c274795236ef88664db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 3930383891193830670}
+  _image: {fileID: 4592645353502133897}
+  _fadeValue: 225
 --- !u!1 &4304731823105668569
 GameObject:
   m_ObjectHideFlags: 0

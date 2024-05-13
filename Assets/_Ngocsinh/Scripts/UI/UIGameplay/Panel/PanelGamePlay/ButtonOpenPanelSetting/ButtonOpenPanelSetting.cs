@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ButtonOpenPanelSetting : MonoBehaviour
+namespace _Ngocsinh.Scripts.UI.UIGameplay.Panel.PanelGamePlay.ButtonOpenPanelSetting
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ButtonOpenPanelSetting : MonoBehaviour
     {
+        [SerializeField] private Button _button;
         
-    }
+        [SerializeField] private PanelSetting.PanelSetting _panelSetting;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Reset()
+        {
+            _button = GetComponent<Button>();
+            _panelSetting = FindObjectOfType<PanelSetting.PanelSetting>();
+        }
+
+        private void Start()
+        {
+            _button.onClick.AddListener(() =>
+            {
+                _panelSetting.Enable();
+            });
+        }
     }
 }
