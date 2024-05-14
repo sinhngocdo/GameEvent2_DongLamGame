@@ -1,3 +1,4 @@
+using _Ngocsinh.Scripts.Manage.LevelManage;
 using _Ngocsinh.Scripts.UI.UIGameplay.Panel.PanelWinGame;
 using Ngocsinh.Observer;
 using UnityEngine;
@@ -20,7 +21,11 @@ namespace UI.UIWinLose.WinBtn
 
         private void Start()
         {
-            button.onClick.AddListener(() => _panelWinGame.Enable());
+            button.onClick.AddListener(() =>
+            {
+                this.PostEvent(EventID.OnWinGame);
+                _panelWinGame.Enable();
+            });
         }
     }
 }

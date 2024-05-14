@@ -1,6 +1,7 @@
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
+using Ngocsinh.Observer;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,7 @@ namespace _Ngocsinh.Scripts.UI.UIGameplay.Panel.PanelLoseGame
         private void Start()
         {
             initPosition = _rectTransform.anchoredPosition;
+            this.RegisterListener(EventID.OnLoseGame, (param) => OnLoseGame());
         }
 
         public void Enable()
@@ -56,6 +58,11 @@ namespace _Ngocsinh.Scripts.UI.UIGameplay.Panel.PanelLoseGame
             });
             
             
+        }
+
+        void OnLoseGame()
+        {
+            this.Enable();
         }
         
 

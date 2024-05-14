@@ -1,6 +1,7 @@
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
+using Ngocsinh.Observer;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,7 @@ namespace _Ngocsinh.Scripts.UI.UIGameplay.Panel.PanelWinGame
         private void Start()
         {
             initPosition = _rectTransform.anchoredPosition;
+            this.RegisterListener(EventID.OnWinGame, (param) => OnWinGame());
         }
 
         public void Enable()
@@ -57,7 +59,11 @@ namespace _Ngocsinh.Scripts.UI.UIGameplay.Panel.PanelWinGame
             
             
         }
-        
+
+        void OnWinGame()
+        {
+            this.Enable();
+        }
 
         #endregion
     }
